@@ -30,4 +30,4 @@ jobs:
           SSH_HOST: ${{ secrets.SSH_HOST }}
 
       - name:
-        run: ssh production 'echo "${{ secrets.SSH_PASSWORD }}" | sudo -S bash ~/deploy.sh'
+        run: ssh production 'echo "${{ secrets.SSH_PASSWORD }}" | sudo -S bash ~/deployments/deploy-realtor-kmb.sh'
