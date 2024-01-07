@@ -15,13 +15,13 @@ jobs:
       - name: Configure SSH
         run: |
           mkdir -p ~/.ssh/
-          echo "$SSH_KEY" > ~/.ssh/staging.key
-          chmod 600 ~/.ssh/staging.key
+          echo "$SSH_KEY" > ~/.ssh/github_actions_buonomo01
+          chmod 600 ~/.ssh/github_actions_buonomo01
           cat >>~/.ssh/config <<END
-          Host staging
+          Host production
             HostName $SSH_HOST
             User $SSH_USER
-            IdentityFile ~/.ssh/staging.key
+            IdentityFile ~/.ssh/github_actions_buonomo01
             StrictHostKeyChecking no
           END
         env:
@@ -30,4 +30,4 @@ jobs:
           SSH_HOST: ${{ secrets.SSH_HOST }}
 
       - name: Test
-        run: ssh $SSH_HOST 'echo "hello"'
+        run: ssh production 'cd /var/www/'
