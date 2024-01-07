@@ -3,6 +3,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "build-dev": "vite build -m development",
     "build": "vite build && vite build --ssr",
     "lint": "eslint",
     "format": "prettier --write ./"
