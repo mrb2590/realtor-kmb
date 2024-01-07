@@ -3,7 +3,6 @@
 use Illuminate\Support\Str;
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Horizon Domain
@@ -54,10 +53,7 @@ return [
     |
     */
 
-    'prefix' => env(
-        'HORIZON_PREFIX',
-        Str::slug(env('APP_NAME', 'Realtor KMB'), '_').'_horizon:'
-    ),
+    'prefix' => env('HORIZON_PREFIX', Str::slug(env('APP_NAME', 'Realtor KMB'), '_') . '_horizon:'),
 
     /*
     |--------------------------------------------------------------------------
@@ -84,7 +80,7 @@ return [
     */
 
     'waits' => [
-        'redis:default' => 60,
+        'redis:default' => 60
     ],
 
     /*
@@ -104,7 +100,7 @@ return [
         'completed' => 60,
         'recent_failed' => 10080,
         'failed' => 10080,
-        'monitored' => 10080,
+        'monitored' => 10080
     ],
 
     /*
@@ -136,8 +132,8 @@ return [
     'metrics' => [
         'trim_snapshots' => [
             'job' => 24,
-            'queue' => 24,
-        ],
+            'queue' => 24
+        ]
     ],
 
     /*
@@ -191,8 +187,8 @@ return [
             'memory' => 128,
             'tries' => 1,
             'timeout' => 60,
-            'nice' => 0,
-        ],
+            'nice' => 0
+        ]
     ],
 
     'environments' => [
@@ -200,14 +196,14 @@ return [
             'supervisor-1' => [
                 'maxProcesses' => 10,
                 'balanceMaxShift' => 1,
-                'balanceCooldown' => 3,
-            ],
+                'balanceCooldown' => 3
+            ]
         ],
 
         'local' => [
             'supervisor-1' => [
-                'maxProcesses' => 3,
-            ],
-        ],
-    ],
+                'maxProcesses' => 3
+            ]
+        ]
+    ]
 ];
