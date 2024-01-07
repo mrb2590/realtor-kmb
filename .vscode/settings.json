@@ -1,0 +1,34 @@
+{
+  "better-phpunit.phpunitBinary": "/var/www/html/vendor/bin/phpunit",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "eslint.validate": ["javascript", "vue"],
+  "files.eol": "\n",
+  "intelephense.files.exclude": [
+    "**/.svn/**",
+    "**/.hg/**",
+    "**/CVS/**",
+    "**/.DS_Store/**",
+    "**/node_modules/**",
+    "**/bower_components/**",
+    "**/vendor/**/{Tests,tests}/**",
+    "**/.history/**",
+    "**/vendor/**/vendor/**",
+    "**/.git/**"
+  ],
+  "intelephense.format.enable": false,
+  "javascript.updateImportsOnFileMove.enabled": "prompt",
+  "namespaceResolver.showMessageOnStatusBar": true,
+  "namespaceResolver.sortAlphabetically": true,
+  "namespaceResolver.sortOnSave": true,
+  "php.suggest.basic": false,
+  "tailwindCSS.emmetCompletions": true,
+  "i18n-ally.localesPaths": ["lang"],
+  "prettier.configPath": "./.prettierrc.json",
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+}
