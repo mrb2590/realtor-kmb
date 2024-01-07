@@ -1,0 +1,10 @@
+/.phpunit.cache
+/node_modules
+/public
+/storage
+/vendor
+.phpunit.result.cache
+auth.json
+*.log
+/.fleet
+/.idea
