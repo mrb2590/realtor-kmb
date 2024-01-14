@@ -17,12 +17,12 @@ class WebAppManifestController extends Controller
             'short_name' => config('app.name'),
             'icons' => [
                 [
-                    'src' => Vite::asset('resources/favicon/android-chrome-192x192.png'),
+                    'src' => Vite::asset('resources/img/icon/android-chrome-192x192.png'),
                     'sizes' => '192x192',
                     'type' => 'image/png'
                 ],
                 [
-                    'src' => Vite::asset('resources/favicon/android-chrome-512x512.png'),
+                    'src' => Vite::asset('resources/img/icon/android-chrome-512x512.png'),
                     'sizes' => '512x512',
                     'type' => 'image/png'
                 ]

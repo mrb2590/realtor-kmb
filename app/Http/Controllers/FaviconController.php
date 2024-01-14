@@ -12,6 +12,6 @@ class FaviconController extends Controller
      */
     public function show(): RedirectResponse
     {
-        return redirect(Vite::asset('resources/favicon/favicon.ico'));
+        return redirect(Vite::asset('resources/img/icon/favicon.ico'));
     }
 }
