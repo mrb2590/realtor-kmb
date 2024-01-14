@@ -1,6 +1,6 @@
 <script setup>
   import { ref } from 'vue';
-  import ApplicationLogo from '@/Components/ApplicationLogo.vue';
+  import ApplicationIcon from '@/Components/ApplicationIcon.vue';
   import Dropdown from '@/Components/Dropdown.vue';
   import DropdownLink from '@/Components/DropdownLink.vue';
   import NavLink from '@/Components/NavLink.vue';
@@ -21,9 +21,7 @@
               <!-- Logo -->
               <div class="flex shrink-0 items-center">
                 <Link :href="route('dashboard')">
-                  <ApplicationLogo
-                    class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200"
-                  />
+                  <ApplicationIcon class="block h-9 w-auto fill-current" />
                 </Link>
               </div>
 
@@ -43,7 +41,7 @@
                     <span class="inline-flex rounded-md">
                       <button
                         type="button"
-                        class="inline-flex items-center rounded-md border border-transparent bg-white px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out hover:text-gray-700 focus:outline-none dark:bg-gray-800 dark:text-gray-400 dark:hover:text-gray-300"
+                        class="inline-flex items-center rounded-md border border-transparent bg-white px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:text-gray-300"
                       >
                         {{ $page.props.auth.user.name }}
 
