@@ -1,8 +1,94 @@
-<script setup></script>
+<script setup>
+  import ApplicationLogo from '@/Components/ApplicationLogo.vue';
+  import {
+    EnvelopeIcon,
+    PhoneIcon,
+    HomeIcon,
+    IdentificationIcon,
+    ClipboardIcon,
+    ChatBubbleLeftIcon,
+    MagnifyingGlassIcon
+  } from '@heroicons/vue/24/outline';
+</script>
 
 <template>
   <div class="relative flex h-full min-h-screen w-full flex-col">
-    <main class="h-full grow">
+    <!-- Top nav -->
+    <nav class="bg-primary-800 z-20 h-8 w-full font-light">
+      <div class="container mx-auto h-full w-full px-4">
+        <ul class="flex h-full w-full items-center space-x-6">
+          <li>
+            <a href="#" class="flex items-center text-white hover:text-gray-200">
+              <PhoneIcon class="mr-2 h-4 w-4" />
+              123-456-7890
+            </a>
+          </li>
+          <li>
+            <a href="#" class="flex items-center text-white hover:text-gray-200">
+              <EnvelopeIcon class="mr-2 h-4 w-4" />
+              test@example.com
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main nav -->
+    <nav class="z-20 h-44 w-full border-b border-sky-900 bg-white/85 backdrop-blur-md">
+      <div class="container mx-auto h-full w-full">
+        <ul
+          class="flex h-full w-full items-center justify-center space-x-6 text-xl font-light uppercase text-sky-900"
+        >
+          <li>
+            <a
+              href="#"
+              class="flex items-center text-primary-black transition hover:text-primary-black-700"
+            >
+              <MagnifyingGlassIcon class="mr-2 h-6 w-6" />
+              Find Your Home
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="flex items-center text-primary-black transition hover:text-primary-black-700"
+            >
+              <IdentificationIcon class="mr-2 h-6 w-6" />
+              About
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="flex items-center text-primary-black transition hover:text-primary-black-700"
+            >
+              <ApplicationLogo class="mx-6 h-36 w-auto" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="flex items-center text-primary-black transition hover:text-primary-black-700"
+            >
+              <ClipboardIcon class="mr-2 h-6 w-6" />
+              Services
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="flex items-center text-primary-black transition hover:text-primary-black-700"
+            >
+              <ChatBubbleLeftIcon class="mr-2 h-6 w-6" />
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <main>
       <Transition
         enter-active-class="transition ease-out duration-500"
         enter-from-class="opacity-0"
