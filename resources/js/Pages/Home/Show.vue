@@ -200,14 +200,14 @@
 
     <!-- Intro -->
     <div
-      class="border-logo-primary relative z-10 mx-auto -mt-28 w-full max-w-4xl rounded-lg border bg-white p-6"
+      class="relative z-10 mx-auto -mt-28 w-full max-w-4xl rounded-lg border border-logo-primary bg-white p-6"
     >
       <div class="flex flex-col items-center justify-center">
         <h1 class="text-center text-4xl font-extrabold uppercase">Find Your Dream Home</h1>
         <button
-          class="hover:bg-primary-100 mb-6 mt-2 flex h-20 w-full max-w-32 justify-center rounded-full bg-white p-4 px-4 transition duration-300"
+          class="mb-6 mt-2 flex h-20 w-full max-w-32 justify-center rounded-full bg-white p-4 px-4 transition duration-300 hover:bg-primary-100"
         >
-          <ChevronDownIcon class="text-logo-primary h-6 w-6 animate-bounce" />
+          <ChevronDownIcon class="h-6 w-6 animate-bounce text-logo-primary" />
         </button>
         <div class="flex flex-row items-stretch justify-center space-x-6">
           <div
@@ -227,59 +227,61 @@
       </div>
     </div>
 
-    <div class="bg-primary-800 mt-14 flex flex-col space-y-20 px-6 py-12 text-white">
+    <div
+      class="mt-14 flex flex-col space-y-20 overflow-x-hidden bg-primary-800 px-6 py-12 text-white"
+    >
       <h2 class="text-center text-4xl font-extrabold uppercase">More Awards Than Others</h2>
 
       <div class="flex flex-row space-x-6">
         <div class="animate-scroll-left flex w-max flex-row justify-center space-x-6">
           <div class="flex h-36 w-36 flex-col items-stretch justify-center space-y-4">
-            <img :src="AwardImg" class="border-primary-100 h-full w-full rounded-full border-2" />
+            <img :src="AwardImg" class="h-full w-full rounded-full border-2 border-primary-100" />
             <div class="text-center text-xl">Best Realtor 2023</div>
           </div>
           <div class="flex h-36 w-36 flex-col items-stretch justify-center space-y-4">
-            <img :src="AwardImg" class="border-primary-100 h-full w-full rounded-full border-2" />
+            <img :src="AwardImg" class="h-full w-full rounded-full border-2 border-primary-100" />
             <div class="text-center text-xl">Best Realtor 2022</div>
           </div>
           <div class="flex h-36 w-36 flex-col items-stretch justify-center space-y-4">
-            <img :src="AwardImg" class="border-primary-100 h-full w-full rounded-full border-2" />
+            <img :src="AwardImg" class="h-full w-full rounded-full border-2 border-primary-100" />
             <div class="text-center text-xl">Best Realtor 2021</div>
           </div>
           <div class="flex h-36 w-36 flex-col items-stretch justify-center space-y-4">
-            <img :src="AwardImg" class="border-primary-100 h-full w-full rounded-full border-2" />
+            <img :src="AwardImg" class="h-full w-full rounded-full border-2 border-primary-100" />
             <div class="text-center text-xl">Best Realtor 2020</div>
           </div>
           <div class="flex h-36 w-36 flex-col items-stretch justify-center space-y-4">
-            <img :src="AwardImg" class="border-primary-100 h-full w-full rounded-full border-2" />
+            <img :src="AwardImg" class="h-full w-full rounded-full border-2 border-primary-100" />
             <div class="text-center text-xl">Best Realtor 2019</div>
           </div>
           <div class="flex h-36 w-36 flex-col items-stretch justify-center space-y-4">
-            <img :src="AwardImg" class="border-primary-100 h-full w-full rounded-full border-2" />
+            <img :src="AwardImg" class="h-full w-full rounded-full border-2 border-primary-100" />
             <div class="text-center text-xl">Best Realtor 2018</div>
           </div>
         </div>
         <div class="animate-scroll-left flex w-max flex-row justify-center space-x-6">
           <div class="flex h-36 w-36 flex-col items-stretch justify-center space-y-4">
-            <img :src="AwardImg" class="border-primary-100 h-full w-full rounded-full border-2" />
+            <img :src="AwardImg" class="h-full w-full rounded-full border-2 border-primary-100" />
             <div class="text-center text-xl">Best Realtor 2023</div>
           </div>
           <div class="flex h-36 w-36 flex-col items-stretch justify-center space-y-4">
-            <img :src="AwardImg" class="border-primary-100 h-full w-full rounded-full border-2" />
+            <img :src="AwardImg" class="h-full w-full rounded-full border-2 border-primary-100" />
             <div class="text-center text-xl">Best Realtor 2022</div>
           </div>
           <div class="flex h-36 w-36 flex-col items-stretch justify-center space-y-4">
-            <img :src="AwardImg" class="border-primary-100 h-full w-full rounded-full border-2" />
+            <img :src="AwardImg" class="h-full w-full rounded-full border-2 border-primary-100" />
             <div class="text-center text-xl">Best Realtor 2021</div>
           </div>
           <div class="flex h-36 w-36 flex-col items-stretch justify-center space-y-4">
-            <img :src="AwardImg" class="border-primary-100 h-full w-full rounded-full border-2" />
+            <img :src="AwardImg" class="h-full w-full rounded-full border-2 border-primary-100" />
             <div class="text-center text-xl">Best Realtor 2020</div>
           </div>
           <div class="flex h-36 w-36 flex-col items-stretch justify-center space-y-4">
-            <img :src="AwardImg" class="border-primary-100 h-full w-full rounded-full border-2" />
+            <img :src="AwardImg" class="h-full w-full rounded-full border-2 border-primary-100" />
             <div class="text-center text-xl">Best Realtor 2019</div>
           </div>
           <div class="flex h-36 w-36 flex-col items-stretch justify-center space-y-4">
-            <img :src="AwardImg" class="border-primary-100 h-full w-full rounded-full border-2" />
+            <img :src="AwardImg" class="h-full w-full rounded-full border-2 border-primary-100" />
             <div class="text-center text-xl">Best Realtor 2018</div>
           </div>
         </div>
