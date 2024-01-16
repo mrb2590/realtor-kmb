@@ -49,7 +49,7 @@ export default {
     './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
     './storage/framework/views/*.php',
     './resources/views/**/*.blade.php',
-    './resources/js/**/*.vue'
+    './resources/js/**/*.{vue,js}'
   ],
   darkMode: 'class',
   theme: {
@@ -86,25 +86,9 @@ export default {
         }
       });
 
-      addUtilities({
-        '.blur-mask': {
-          mask: 'linear-gradient(black, transparent)',
-          backdropFilter: 'blur(20px)'
-        },
-        '.blur-mask-reverse': {
-          mask: 'linear-gradient(transparent, black)',
-          backdropFilter: 'blur(20px)'
-        },
-        '.text-shadow-default': {
-          textShadow: '0 20px 20px #000'
-        },
-        '.text-shadow-none': {
-          textShadow: 'none'
-        },
-        '.raised': {
-          '@apply shadow-lg shadow-black/80': {}
-        }
-      });
+      addComponents({});
+
+      addUtilities({});
     })
   ]
 };

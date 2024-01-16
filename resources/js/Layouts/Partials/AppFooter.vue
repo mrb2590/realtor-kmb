@@ -1,10 +1,7 @@
 <script setup>
   import ApplicationLogo from '@/Components/ApplicationLogo.vue';
-  import FacebookIcon from '@/Components/SocialIcons/FacebookIcon.vue';
-  import LinkedInIcon from '@/Components/SocialIcons/LinkedInIcon.vue';
-  import InstagramIcon from '@/Components/SocialIcons/InstagramIcon.vue';
-  import { PhoneIcon, EnvelopeIcon, ChatBubbleLeftIcon } from '@heroicons/vue/24/outline';
   import AppLink from '@/Components/AppLink.vue';
+  import { navLinks } from '@/Data/NavLinks';
 </script>
 
 <template>
@@ -24,7 +21,7 @@
           </div>
 
           <div class="text-center text-sm text-gray-600">
-            <AppLink href="#" class="text-sm">Privacy Policy</AppLink>
+            <AppLink href="#" class="text-sm"> Privacy Policy </AppLink>
             |
             <AppLink href="#" class="text-sm"> Terms & Conditions </AppLink>
           </div>
@@ -36,84 +33,24 @@
         class="items-cemter order-first flex basis-full items-center justify-center md:order-last md:basis-3/5 lg:basis-3/4"
       >
         <div
-          class="flex w-full max-w-sm flex-row flex-wrap items-start justify-between md:max-w-full lg:max-w-full xl:max-w-full"
+          class="flex w-full max-w-sm flex-row flex-wrap items-start justify-between md:max-w-full"
         >
-          <!-- About Links -->
-          <div class="w-auto min-w-40 max-w-48 p-3">
-            <h3 class="mb-2 text-xl font-bold">About</h3>
+          <div class="w-auto min-w-40 max-w-52 p-3" v-for="(navLink, i) in navLinks" :key="i">
+            <h3 class="mb-2 text-xl font-bold">{{ navLink.title }}</h3>
             <ul>
-              <li class="mb-1"><AppLink href="#" class="text-sm"> Meet the Team </AppLink></li>
-              <li class="mb-1"><AppLink href="#" class="text-sm"> Meet the Team </AppLink></li>
-            </ul>
-          </div>
-
-          <!-- Services Links -->
-          <div class="w-auto min-w-40 max-w-48 p-3">
-            <h3 class="mb-2 text-xl font-bold">Services</h3>
-            <!-- <p class=" text-sm text-gray-600">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-            </p> -->
-            <ul>
-              <li class="mb-1"><AppLink href="#" class="text-sm"> Buying Your Home </AppLink></li>
-              <li class="mb-1"><AppLink href="#" class="text-sm"> Selling Your Home </AppLink></li>
-              <li class="mb-1"><AppLink href="#" class="text-sm"> Staging Your Home </AppLink></li>
-              <li class="mb-1"><AppLink href="#" class="text-sm"> Expired Listings </AppLink></li>
-            </ul>
-          </div>
-
-          <!-- Contact Links -->
-          <div class="w-auto min-w-40 max-w-48 p-3">
-            <h3 class="mb-2 text-xl font-bold">Contact</h3>
-            <ul>
-              <li class="mb-1">
-                <AppLink href="#" class="flex flex-row space-x-2 text-sm">
-                  <ChatBubbleLeftIcon class="h-auto w-4" />
-                  <span>Message Me</span>
-                </AppLink>
-              </li>
-              <li class="mb-1">
-                <AppLink
-                  href="tel:+1-732-207-8154"
-                  :router="false"
-                  class="flex flex-row space-x-2 text-sm"
-                >
-                  <PhoneIcon class="h-auto w-4" />
-                  <span>(732) 207-8154</span>
-                </AppLink>
-              </li>
-              <li class="mb-1">
-                <AppLink
-                  href="mailto:realtorkmb@gmail.com"
-                  :router="false"
-                  class="flex flex-row space-x-2 text-sm"
-                >
-                  <EnvelopeIcon class="h-auto w-4" />
-                  <span>realtorkmb@gmail.com</span>
-                </AppLink>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Social Media Links -->
-          <div class="w-auto min-w-40 max-w-48 p-3">
-            <h2 class="mb-2 text-xl font-bold">Social Media</h2>
-            <ul>
-              <li class="mb-1">
-                <AppLink href="#" :router="false" class="flex flex-row space-x-2 text-sm">
-                  <LinkedInIcon class="h-auto w-4 fill-[#0a66c2]" />
-                  <span>LinkedIn</span>
-                </AppLink>
-              </li>
-              <li class="mb-1">
-                <AppLink href="#" :router="false" class="flex flex-row space-x-2 text-sm">
-                  <FacebookIcon class="h-auto w-4 fill-[#0866ff]" />
-                  <span>Facebook</span>
-                </AppLink>
-              </li>
-              <li class="mb-1">
-                <AppLink href="#" :router="false" class="flex flex-row space-x-2 text-sm">
-                  <InstagramIcon class="h-auto w-4" />
-                  <span>Instagram</span>
+              <li
+                class="mb-1 flex flex-row space-x-2 text-sm"
+                v-for="(link, j) in navLink.links"
+                :key="j"
+              >
+                <component
+                  :is="link.icon.component"
+                  v-if="link.icon"
+                  class="h-auto w-4"
+                  :class="link.icon.classes"
+                />
+                <AppLink :href="link.href" class="" :router="link.router">
+                  {{ link.title }}
                 </AppLink>
               </li>
             </ul>
