@@ -1,5 +1,6 @@
 <script setup>
   import ApplicationLogo from '@/Components/ApplicationLogo.vue';
+  import AppFooter from '@/Layouts/Partials/AppFooter.vue';
   import {
     EnvelopeIcon,
     PhoneIcon,
@@ -14,7 +15,7 @@
 <template>
   <div class="relative flex h-full min-h-screen w-full flex-col">
     <!-- Top nav -->
-    <nav class="bg-primary-800 z-20 h-8 w-full font-light">
+    <nav class="z-20 h-8 w-full bg-primary-800 font-light">
       <div class="container mx-auto h-full w-full px-4">
         <ul class="flex h-full w-full items-center space-x-6">
           <li>
@@ -42,7 +43,7 @@
           <li>
             <a
               href="#"
-              class="flex items-center text-primary-black transition hover:text-primary-black-700"
+              class="text-primary-black hover:text-primary-black-700 flex items-center transition"
             >
               <MagnifyingGlassIcon class="mr-2 h-6 w-6" />
               Find Your Home
@@ -51,7 +52,7 @@
           <li>
             <a
               href="#"
-              class="flex items-center text-primary-black transition hover:text-primary-black-700"
+              class="text-primary-black hover:text-primary-black-700 flex items-center transition"
             >
               <IdentificationIcon class="mr-2 h-6 w-6" />
               About
@@ -60,7 +61,7 @@
           <li>
             <a
               href="#"
-              class="flex items-center text-primary-black transition hover:text-primary-black-700"
+              class="text-primary-black hover:text-primary-black-700 flex items-center transition"
             >
               <ApplicationLogo class="mx-6 h-36 w-auto" />
             </a>
@@ -68,7 +69,7 @@
           <li>
             <a
               href="#"
-              class="flex items-center text-primary-black transition hover:text-primary-black-700"
+              class="text-primary-black hover:text-primary-black-700 flex items-center transition"
             >
               <ClipboardIcon class="mr-2 h-6 w-6" />
               Services
@@ -77,7 +78,7 @@
           <li>
             <a
               href="#"
-              class="flex items-center text-primary-black transition hover:text-primary-black-700"
+              class="text-primary-black hover:text-primary-black-700 flex items-center transition"
             >
               <ChatBubbleLeftIcon class="mr-2 h-6 w-6" />
               Contact Us
@@ -102,5 +103,7 @@
         <slot />
       </Transition>
     </main>
+
+    <AppFooter />
   </div>
 </template>
