@@ -1,15 +1,12 @@
 <script setup>
   import ApplicationLogo from '@/Components/ApplicationLogo.vue';
   import AppFooter from '@/Layouts/Partials/AppFooter.vue';
-  import {
-    EnvelopeIcon,
-    PhoneIcon,
-    HomeIcon,
-    IdentificationIcon,
-    ClipboardIcon,
-    ChatBubbleLeftIcon,
-    MagnifyingGlassIcon
-  } from '@heroicons/vue/24/outline';
+  import EnvelopeIcon from '~icons/heroicons-outline/envelope';
+  import PhoneIcon from '~icons/heroicons-outline/phone';
+  import IdentificationIcon from '~icons/heroicons-outline/identification';
+  import ClipboardIcon from '~icons/heroicons-outline/clipboard';
+  import ChatBubbleLeftIcon from '~icons/heroicons-outline/chat-bubble-left';
+  import MagnifyingGlassIcon from '~icons/heroicons-outline/magnifying-glass';
 </script>
 
 <template>

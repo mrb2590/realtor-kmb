@@ -10,7 +10,7 @@
   import PrimaryButton from '@/Components/PrimaryButton.vue';
   import PersonArmsFolded from '@/../img/home/person-arms-folded.png';
   import AwardImg from '@/../img/home/award.png';
-  import { ChevronDownIcon } from '@heroicons/vue/24/outline';
+  import ChevronDownIcon from '~icons/heroicons-outline/chevron-down';
   import { useForm } from '@inertiajs/vue3';
 
   defineOptions({ layout: HomeLayout });
