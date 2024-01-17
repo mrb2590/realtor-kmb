@@ -1,19 +1,17 @@
 import { markRaw } from 'vue';
-import {
-  EnvelopeIcon,
-  DevicePhoneMobileIcon,
-  BuildingOfficeIcon,
-  ChatBubbleLeftIcon,
-  ArrowRightEndOnRectangleIcon,
-  ArrowRightStartOnRectangleIcon,
-  HomeModernIcon,
-  ClockIcon,
-  UserGroupIcon,
-  InformationCircleIcon
-} from '@heroicons/vue/24/outline';
-import FacebookIcon from '@/Components/SocialIcons/FacebookIcon.vue';
-import LinkedInIcon from '@/Components/SocialIcons/LinkedInIcon.vue';
-import InstagramIcon from '@/Components/SocialIcons/InstagramIcon.vue';
+import EnvelopeIcon from '~icons/heroicons-outline/envelope';
+import DevicePhoneMobileIcon from '~icons/heroicons-outline/device-phone-mobile';
+import BuildingOfficeIcon from '~icons/heroicons-outline/building-office';
+import TagIcon from '~icons/heroicons-outline/tag';
+import ShoppingCartIcon from '~icons/heroicons-outline/shopping-cart';
+import ChatBubbleLeftIcon from '~icons/heroicons-outline/chat-bubble-left';
+import HomeModernIcon from '~icons/heroicons-outline/home-modern';
+import ClockIcon from '~icons/heroicons-outline/clock';
+import UserGroupIcon from '~icons/heroicons-outline/user-group';
+import InformationCircleIcon from '~icons/heroicons-outline/information-circle';
+import FacebookIcon from '~icons/logos/facebook';
+import LinkedInIcon from '~icons/logos/linkedin-icon';
+import InstagramIcon from '~icons/logos/instagram-icon';
 
 export { navLinks };
 
@@ -49,7 +47,7 @@ const navLinks = [
         href: route('dashboard'),
         router: true,
         icon: {
-          component: markRaw(ArrowRightEndOnRectangleIcon),
+          component: markRaw(ShoppingCartIcon),
           classes: []
         }
       },
@@ -58,7 +56,7 @@ const navLinks = [
         href: route('dashboard'),
         router: true,
         icon: {
-          component: markRaw(ArrowRightStartOnRectangleIcon),
+          component: markRaw(TagIcon),
           classes: []
         }
       },
@@ -95,7 +93,7 @@ const navLinks = [
         }
       },
       {
-        title: 'Cell: (732) 207-8154)',
+        title: 'Cell: (732) 207-8154',
         href: 'tel:+17322078154',
         router: false,
         icon: {
@@ -104,8 +102,8 @@ const navLinks = [
         }
       },
       {
-        title: 'Office: (732) 207-8154)',
-        href: 'tel:+17322078154',
+        title: 'Office: (904) 503-0425',
+        href: 'tel:+19045030425',
         router: false,
         icon: {
           component: markRaw(BuildingOfficeIcon),
