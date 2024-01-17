@@ -1,6 +1,6 @@
 <script setup>
   import AppTopNavLink from '@/Components/AppTopNavLink.vue';
-  import { links } from '@/Data/Links';
+  import { links } from '@/../data/app-links';
 </script>
 
 <template>

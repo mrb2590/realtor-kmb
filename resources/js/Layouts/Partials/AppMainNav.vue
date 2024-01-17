@@ -1,7 +1,7 @@
 <script setup>
   import ApplicationLogo from '@/Components/ApplicationLogo.vue';
   import AppLink from '@/Components/AppLink.vue';
-  import { links } from '@/Data/Links';
+  import { links } from '@/../data/app-links';
 </script>
 
 <template>
