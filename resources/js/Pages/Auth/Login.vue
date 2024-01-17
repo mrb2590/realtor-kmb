@@ -5,7 +5,8 @@
   import InputLabel from '@/Components/InputLabel.vue';
   import PrimaryButton from '@/Components/PrimaryButton.vue';
   import TextInput from '@/Components/TextInput.vue';
-  import { Head, Link, useForm } from '@inertiajs/vue3';
+  import AppLink from '@/Components/AppLink.vue';
+  import { Head, useForm } from '@inertiajs/vue3';
 
   defineProps({
     canResetPassword: {
@@ -77,13 +78,9 @@
       </div>
 
       <div class="mt-4 flex items-center justify-end">
-        <Link
-          v-if="canResetPassword"
-          :href="route('password.request')"
-          class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-offset-gray-800"
-        >
+        <AppLink v-if="canResetPassword" :href="route('password.request')">
           Forgot your password?
-        </Link>
+        </AppLink>
 
         <PrimaryButton
           class="ms-4"

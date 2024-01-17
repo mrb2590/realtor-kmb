@@ -14,16 +14,17 @@
     'visited:text-primary-600',
     'hover:text-primary-400',
     'focus:text-primary-400',
-    'focus:outline-none',
-    'focus:ring-2',
-    'focus:ring-primary-500',
-    'focus:ring-offset-2',
+    'focus-visible::outline-none',
+    'focus-visible::ring-2',
+    'focus-visible::ring-primary-500',
+    'focus-visible::ring-offset-2',
     'active:text-primary-800',
     'hover:transform',
     'hover:scale-105',
+    'active:scale-95',
     'transition',
-    'duration-300',
-    'ease-in-out'
+    'ease-in-out',
+    'disabled:pointer-events-none'
   ];
 </script>
 

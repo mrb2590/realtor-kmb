@@ -65,6 +65,9 @@ export default {
       fontFamily: {
         body: ['Figtree', 'system-ui', 'sans-serif'],
         display: ['Source Serif Pro', 'Georgia', 'serif']
+      },
+      screens: {
+        xs: '425px'
       }
     }
   },

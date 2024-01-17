@@ -3,9 +3,9 @@
   import ApplicationIcon from '@/Components/ApplicationIcon.vue';
   import Dropdown from '@/Components/Dropdown.vue';
   import DropdownLink from '@/Components/DropdownLink.vue';
+  import AppLink from '@/Components/AppLink.vue';
   import NavLink from '@/Components/NavLink.vue';
   import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
-  import { Link } from '@inertiajs/vue3';
 
   const showingNavigationDropdown = ref(false);
 </script>
@@ -20,9 +20,9 @@
             <div class="flex">
               <!-- Logo -->
               <div class="flex shrink-0 items-center">
-                <Link :href="route('dashboard')">
+                <AppLink :href="route('dashboard')">
                   <ApplicationIcon class="block h-9 w-auto fill-current" />
-                </Link>
+                </AppLink>
               </div>
 
               <!-- Navigation Links -->
@@ -41,7 +41,7 @@
                     <span class="inline-flex rounded-md">
                       <button
                         type="button"
-                        class="inline-flex items-center rounded-md border border-transparent bg-white px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:text-gray-300"
+                        class="inline-flex items-center rounded-md border border-transparent bg-white px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-800 dark:text-gray-400 dark:hover:text-gray-300"
                       >
                         {{ $page.props.auth.user.name }}
 

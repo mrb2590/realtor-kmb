@@ -75,7 +75,7 @@ const links = {
         }
       },
       cellPhone: {
-        title: 'Cell: (732) 207-8154',
+        title: '732-207-8154',
         href: 'tel:+17322078154',
         router: false,
         icon: {
@@ -84,7 +84,7 @@ const links = {
         }
       },
       officePhone: {
-        title: 'Office: (904) 503-0425',
+        title: '904-503-0425',
         href: 'tel:+19045030425',
         router: false,
         icon: {

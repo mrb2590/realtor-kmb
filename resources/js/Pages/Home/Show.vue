@@ -30,10 +30,10 @@
 
     <!-- Search Homes Form -->
     <div
-      :class="`relative -mt-52 flex h-screen w-full items-center justify-center bg-black bg-cover bg-fixed bg-right bg-no-repeat`"
+      :class="`relative -mt-52 flex h-screen w-full items-center justify-center bg-black bg-cover bg-fixed bg-center bg-no-repeat`"
       :style="{ backgroundImage: `url(${BackgroundVideo})` }"
     >
-      <div class="absolute left-0 top-0 z-10 h-full w-full backdrop-blur-sm"></div>
+      <div class="absolute left-0 top-0 h-full w-full"></div>
       <form
         @submit.prevent="updatePassword"
         class="z-20 mt-6 w-full max-w-4xl space-y-6 rounded bg-black/50 p-8 shadow-lg"
