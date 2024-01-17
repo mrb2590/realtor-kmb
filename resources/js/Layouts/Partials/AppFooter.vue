@@ -1,7 +1,14 @@
 <script setup>
   import ApplicationLogo from '@/Components/ApplicationLogo.vue';
   import AppLink from '@/Components/AppLink.vue';
-  import { navLinks } from '@/Data/NavLinks';
+  import { links } from '@/Data/Links';
+
+  const navLinks = {
+    about: { ...links.about },
+    contact: { ...links.contact },
+    services: { ...links.services },
+    social: { ...links.social }
+  };
 </script>
 
 <template>
@@ -35,13 +42,13 @@
         <div
           class="flex w-full max-w-sm flex-row flex-wrap items-start justify-between md:max-w-full"
         >
-          <div class="w-auto min-w-40 max-w-52 p-3" v-for="(navLink, i) in navLinks" :key="i">
+          <!-- Nav Links -->
+          <div class="w-auto min-w-40 max-w-52 p-3" v-for="navLink in navLinks">
             <h3 class="mb-2 text-xl font-bold">{{ navLink.title }}</h3>
             <ul>
               <li
-                class="mb-1 flex flex-row space-x-2 text-sm"
-                v-for="(link, j) in navLink.links"
-                :key="j"
+                class="mb-1 flex flex-row items-center space-x-2 text-sm"
+                v-for="link in navLink.subLinks"
               >
                 <component
                   :is="link.icon.component"
@@ -49,7 +56,7 @@
                   class="h-auto w-4"
                   :class="link.icon.classes"
                 />
-                <AppLink :href="link.href" class="" :router="link.router">
+                <AppLink :href="link.href" :router="link.router">
                   {{ link.title }}
                 </AppLink>
               </li>
