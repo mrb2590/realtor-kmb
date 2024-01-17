@@ -8,18 +8,35 @@ import ChatBubbleLeftIcon from '~icons/heroicons-outline/chat-bubble-left';
 import HomeModernIcon from '~icons/heroicons-outline/home-modern';
 import ClockIcon from '~icons/heroicons-outline/clock';
 import UserGroupIcon from '~icons/heroicons-outline/user-group';
+import UsersIcon from '~icons/heroicons-outline/users';
+import HomeIcon from '~icons/heroicons-outline/home';
 import InformationCircleIcon from '~icons/heroicons-outline/information-circle';
 import FacebookIcon from '~icons/logos/facebook';
 import LinkedInIcon from '~icons/logos/linkedin-icon';
 import InstagramIcon from '~icons/logos/instagram-icon';
 
-export { navLinks };
+export { links };
 
-const navLinks = [
-  {
+const links = {
+  home: {
+    title: 'Home',
+    href: route('home'),
+    router: true,
+    icon: {
+      component: markRaw(HomeIcon),
+      classes: []
+    }
+  },
+  about: {
     title: 'About',
-    links: [
-      {
+    href: route('dashboard'),
+    router: true,
+    icon: {
+      component: markRaw(InformationCircleIcon),
+      classes: []
+    },
+    subLinks: {
+      aboutUs: {
         title: 'About Us',
         href: route('dashboard'),
         router: true,
@@ -28,7 +45,7 @@ const navLinks = [
           classes: []
         }
       },
-      {
+      meetTheTeam: {
         title: 'Meet the Team',
         href: route('dashboard'),
         router: true,
@@ -37,53 +54,18 @@ const navLinks = [
           classes: []
         }
       }
-    ]
+    }
   },
-  {
-    title: 'Services',
-    links: [
-      {
-        title: 'Buying Your Home',
-        href: route('dashboard'),
-        router: true,
-        icon: {
-          component: markRaw(ShoppingCartIcon),
-          classes: []
-        }
-      },
-      {
-        title: 'Selling Your Home',
-        href: route('dashboard'),
-        router: true,
-        icon: {
-          component: markRaw(TagIcon),
-          classes: []
-        }
-      },
-      {
-        title: 'Home Staging',
-        href: route('dashboard'),
-        router: true,
-        icon: {
-          component: markRaw(HomeModernIcon),
-          classes: []
-        }
-      },
-      {
-        title: 'Expired Listings',
-        href: route('dashboard'),
-        router: true,
-        icon: {
-          component: markRaw(ClockIcon),
-          classes: []
-        }
-      }
-    ]
-  },
-  {
+  contact: {
     title: 'Contact',
-    links: [
-      {
+    href: route('dashboard'),
+    router: true,
+    icon: {
+      component: markRaw(UsersIcon),
+      classes: []
+    },
+    subLinks: {
+      messageForm: {
         title: 'Message Me',
         href: route('dashboard'),
         router: true,
@@ -92,7 +74,7 @@ const navLinks = [
           classes: []
         }
       },
-      {
+      cellPhone: {
         title: 'Cell: (732) 207-8154',
         href: 'tel:+17322078154',
         router: false,
@@ -101,7 +83,7 @@ const navLinks = [
           classes: []
         }
       },
-      {
+      officePhone: {
         title: 'Office: (904) 503-0425',
         href: 'tel:+19045030425',
         router: false,
@@ -110,7 +92,7 @@ const navLinks = [
           classes: []
         }
       },
-      {
+      email: {
         title: 'karen@realtorkmb.com',
         href: 'mailto:karen@realtorkmb.com',
         router: false,
@@ -119,38 +101,88 @@ const navLinks = [
           classes: []
         }
       }
-    ]
+    }
   },
-  {
+  services: {
+    title: 'Services',
+    href: route('dashboard'),
+    router: true,
+    icon: {
+      component: markRaw(InformationCircleIcon),
+      classes: []
+    },
+    subLinks: {
+      homeBuying: {
+        title: 'Buying Your Home',
+        href: route('dashboard'),
+        router: true,
+        icon: {
+          component: markRaw(ShoppingCartIcon),
+          classes: []
+        }
+      },
+      homeSelling: {
+        title: 'Selling Your Home',
+        href: route('dashboard'),
+        router: true,
+        icon: {
+          component: markRaw(TagIcon),
+          classes: []
+        }
+      },
+      homeStaging: {
+        title: 'Home Staging',
+        href: route('dashboard'),
+        router: true,
+        icon: {
+          component: markRaw(HomeModernIcon),
+          classes: []
+        }
+      },
+      expiredListings: {
+        title: 'Expired Listings',
+        href: route('dashboard'),
+        router: true,
+        icon: {
+          component: markRaw(ClockIcon),
+          classes: []
+        }
+      }
+    }
+  },
+  social: {
     title: 'Social Media',
-    links: [
-      {
+    href: '#',
+    router: false,
+    icon: null,
+    subLinks: {
+      linkedin: {
         title: 'LinkedIn',
         href: route('dashboard'),
         router: false,
         icon: {
           component: markRaw(LinkedInIcon),
-          classes: ['fill-primary-600']
+          classes: []
         }
       },
-      {
+      facebook: {
         title: 'Facebook',
         href: route('dashboard'),
         router: false,
         icon: {
           component: markRaw(FacebookIcon),
-          classes: ['fill-primary-600']
+          classes: []
         }
       },
-      {
+      instagram: {
         title: 'Instagram',
         href: route('dashboard'),
         router: false,
         icon: {
           component: markRaw(InstagramIcon),
-          classes: ['fill-primary-600']
+          classes: []
         }
       }
-    ]
+    }
   }
-];
+};
