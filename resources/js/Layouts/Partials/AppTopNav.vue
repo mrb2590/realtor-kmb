@@ -1,47 +1,45 @@
 <script setup>
-  import AppTopNavLink from '@/Components/AppTopNavLink.vue';
+  import AppLink from '@/Components/AppLink.vue';
   import { links } from '@/../data/app-links';
+
+  const { messageForm, ...filteredContactLinks } = links.contact.subLinks; // Filter out messageForm
 </script>
 
 <template>
-  <nav class="z-20 w-full bg-primary-800 font-light">
+  <nav class="z-20 w-full border-b border-b-white bg-white font-light">
     <div
       class="container mx-auto flex w-full flex-row items-center justify-between space-x-6 px-4 py-2"
     >
-      <ul class="flex w-full items-center space-x-6">
+      <ul class="flex w-full basis-0 items-center space-x-2">
+        <li class="flex flex-row items-center text-sm" v-for="link in links.social.subLinks">
+          <AppLink :href="link.href" :router="link.router" :title="link.title" class="rounded-full">
+            <component
+              :is="link.icon.component"
+              v-if="link.icon"
+              class="h-5"
+              :class="link.icon.classes"
+            />
+          </AppLink>
+        </li>
+      </ul>
+      <ul class="flex w-full items-center justify-end space-x-6">
         <li
-          class="flex flex-row items-center space-x-2 text-sm text-white"
-          v-for="link in links.contact.subLinks"
+          class="flex flex-row items-center space-x-2 text-sm"
+          v-for="link in filteredContactLinks"
         >
           <component
             :is="link.icon.component"
             v-if="link.icon"
-            class="h-auto w-4"
+            class="h-5 w-5"
             :class="link.icon.classes"
           />
-          <AppTopNavLink :href="link.href" :router="link.router">
-            {{ link.title }}
-          </AppTopNavLink>
-        </li>
-      </ul>
-      <ul class="flex w-full basis-0 items-center space-x-2">
-        <li
-          class="flex flex-row items-center text-sm text-white"
-          v-for="link in links.social.subLinks"
-        >
-          <AppTopNavLink
+          <AppLink
             :href="link.href"
             :router="link.router"
-            :title="link.title"
-            class="rounded-full bg-white p-1"
+            class="flex flex-row items-center space-x-2 whitespace-nowrap"
           >
-            <component
-              :is="link.icon.component"
-              v-if="link.icon"
-              class="h-auto w-4"
-              :class="link.icon.classes"
-            />
-          </AppTopNavLink>
+            <span> {{ link.title }} </span>
+          </AppLink>
         </li>
       </ul>
     </div>

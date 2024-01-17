@@ -5,7 +5,7 @@
 </script>
 
 <template>
-  <nav class="z-20 h-44 w-full border-b border-sky-900 bg-white/85 backdrop-blur-md">
+  <nav class="z-20 h-44 w-full border-b border-sky-900 bg-white backdrop-blur-md">
     <div class="container mx-auto h-full w-full">
       <ul
         class="flex h-full w-full items-center justify-center space-x-6 text-xl font-light uppercase"
