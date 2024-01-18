@@ -17,7 +17,7 @@
     <div class="container mx-auto flex flex-row flex-wrap justify-evenly px-4 py-8 md:flex-nowrap">
       <!-- Left Side -->
       <div
-        class="mt-12 flex basis-full items-center justify-center md:mr-12 md:mt-0 md:basis-2/5 lg:basis-1/4"
+        class="mt-12 flex basis-full items-center justify-center md:mr-12 md:mt-0 md:basis-2/5 lg:basis-1/6"
       >
         <!-- Logo Wrapper -->
         <div class="flex w-full flex-col items-center justify-center space-y-2">
@@ -37,7 +37,7 @@
 
       <!-- Right Side -->
       <nav
-        class="items-cemter order-first flex basis-full items-center justify-center md:order-last md:basis-3/5 lg:basis-3/4"
+        class="items-cemter order-first flex basis-full items-center justify-center md:order-last md:basis-3/5 lg:basis-5/6"
       >
         <div
           class="flex w-full max-w-[30rem] flex-row flex-wrap items-start justify-between lg:max-w-full"

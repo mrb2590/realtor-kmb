@@ -1,16 +1,22 @@
 <script setup>
   import ApplicationLogo from '@/Components/ApplicationLogo.vue';
   import AppLink from '@/Components/AppLink.vue';
+  import BarsIcon from '~icons/heroicons-outline/bars-3';
   import { links } from '@/../data/app-links';
+  import SecondaryButton from '@/Components/SecondaryButton.vue';
 </script>
 
 <template>
   <nav
-    class="z-30 w-full border-none bg-transparent sm:border-b sm:border-solid sm:border-primary-700 sm:bg-white sm:shadow-md"
+    class="relative z-30 w-full border-none bg-transparent sm:border-b sm:border-solid sm:border-primary-700 sm:bg-white sm:shadow-md"
   >
+    <SecondaryButton class="absolute right-3 top-3 z-30 border-primary-700 !px-2 py-2 shadow-sm">
+      <span class="sr-only">Open main menu</span>
+      <BarsIcon class="h-6 w-6 text-primary-700" />
+    </SecondaryButton>
     <div class="mx-auto h-full w-full px-4 py-4 sm:container">
       <ul
-        class="mx-auto flex h-full w-full max-w-4xl items-center justify-center space-x-6 text-xl font-light uppercase"
+        class="mx-auto flex h-full w-full max-w-4xl items-center justify-center text-xl font-light uppercase sm:space-x-6"
       >
         <li class="hidden basis-1/6 items-center sm:flex">
           <AppLink

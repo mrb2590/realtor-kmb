@@ -10,6 +10,7 @@ import ClockIcon from '~icons/heroicons-outline/clock';
 import UserGroupIcon from '~icons/heroicons-outline/user-group';
 import UsersIcon from '~icons/heroicons-outline/users';
 import HomeIcon from '~icons/heroicons-outline/home';
+import PhoneIcon from '~icons/heroicons-outline/phone';
 import InformationCircleIcon from '~icons/heroicons-outline/information-circle';
 import FacebookIcon from '~icons/fa6-brands/facebook';
 import LinkedInIcon from '~icons/fa6-brands/linkedin';
@@ -81,6 +82,10 @@ const links = {
         icon: {
           component: markRaw(DevicePhoneMobileIcon),
           classes: []
+        },
+        iconAlt: {
+          component: markRaw(PhoneIcon),
+          classes: []
         }
       },
       officePhone: {
@@ -89,6 +94,10 @@ const links = {
         router: false,
         icon: {
           component: markRaw(BuildingOfficeIcon),
+          classes: []
+        },
+        iconAlt: {
+          component: markRaw(PhoneIcon),
           classes: []
         }
       },
