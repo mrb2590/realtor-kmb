@@ -3,7 +3,8 @@
   import InputLabel from '@/Components/InputLabel.vue';
   import PrimaryButton from '@/Components/PrimaryButton.vue';
   import TextInput from '@/Components/TextInput.vue';
-  import { Link, useForm, usePage } from '@inertiajs/vue3';
+  import AppLink from '@/Components/AppLink.vue';
+  import { useForm, usePage } from '@inertiajs/vue3';
 
   defineProps({
     mustVerifyEmail: {
@@ -67,14 +68,9 @@
       <div v-if="mustVerifyEmail && user.email_verified_at === null">
         <p class="mt-2 text-sm text-gray-800 dark:text-gray-200">
           Your email address is unverified.
-          <Link
-            :href="route('verification.send')"
-            method="post"
-            as="button"
-            class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-offset-gray-800"
-          >
+          <AppLink :href="route('verification.send')" method="post" as="button" class="underline">
             Click here to re-send the verification email.
-          </Link>
+          </AppLink>
         </p>
 
         <div

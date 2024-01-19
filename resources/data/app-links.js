@@ -10,10 +10,11 @@ import ClockIcon from '~icons/heroicons-outline/clock';
 import UserGroupIcon from '~icons/heroicons-outline/user-group';
 import UsersIcon from '~icons/heroicons-outline/users';
 import HomeIcon from '~icons/heroicons-outline/home';
+import PhoneIcon from '~icons/heroicons-outline/phone';
 import InformationCircleIcon from '~icons/heroicons-outline/information-circle';
-import FacebookIcon from '~icons/logos/facebook';
-import LinkedInIcon from '~icons/logos/linkedin-icon';
-import InstagramIcon from '~icons/logos/instagram-icon';
+import FacebookIcon from '~icons/fa6-brands/facebook';
+import LinkedInIcon from '~icons/fa6-brands/linkedin';
+import InstagramIcon from '~icons/fa6-brands/instagram';
 
 export { links };
 
@@ -51,53 +52,6 @@ const links = {
         router: true,
         icon: {
           component: markRaw(UserGroupIcon),
-          classes: []
-        }
-      }
-    }
-  },
-  contact: {
-    title: 'Contact',
-    href: route('dashboard'),
-    router: true,
-    icon: {
-      component: markRaw(UsersIcon),
-      classes: []
-    },
-    subLinks: {
-      messageForm: {
-        title: 'Message Me',
-        href: route('dashboard'),
-        router: true,
-        icon: {
-          component: markRaw(ChatBubbleLeftIcon),
-          classes: []
-        }
-      },
-      cellPhone: {
-        title: 'Cell: (732) 207-8154',
-        href: 'tel:+17322078154',
-        router: false,
-        icon: {
-          component: markRaw(DevicePhoneMobileIcon),
-          classes: []
-        }
-      },
-      officePhone: {
-        title: 'Office: (904) 503-0425',
-        href: 'tel:+19045030425',
-        router: false,
-        icon: {
-          component: markRaw(BuildingOfficeIcon),
-          classes: []
-        }
-      },
-      email: {
-        title: 'karen@realtorkmb.com',
-        href: 'mailto:karen@realtorkmb.com',
-        router: false,
-        icon: {
-          component: markRaw(EnvelopeIcon),
           classes: []
         }
       }
@@ -145,6 +99,61 @@ const links = {
         router: true,
         icon: {
           component: markRaw(ClockIcon),
+          classes: []
+        }
+      }
+    }
+  },
+  contact: {
+    title: 'Contact',
+    href: route('dashboard'),
+    router: true,
+    icon: {
+      component: markRaw(UsersIcon),
+      classes: []
+    },
+    subLinks: {
+      messageForm: {
+        title: 'Message Me',
+        href: route('dashboard'),
+        router: true,
+        icon: {
+          component: markRaw(ChatBubbleLeftIcon),
+          classes: []
+        }
+      },
+      cellPhone: {
+        title: '732-207-8154',
+        href: 'tel:+17322078154',
+        router: false,
+        icon: {
+          component: markRaw(DevicePhoneMobileIcon),
+          classes: []
+        },
+        iconAlt: {
+          component: markRaw(PhoneIcon),
+          classes: []
+        }
+      },
+      officePhone: {
+        title: '904-503-0425',
+        href: 'tel:+19045030425',
+        router: false,
+        icon: {
+          component: markRaw(BuildingOfficeIcon),
+          classes: []
+        },
+        iconAlt: {
+          component: markRaw(PhoneIcon),
+          classes: []
+        }
+      },
+      email: {
+        title: 'karen@realtorkmb.com',
+        href: 'mailto:karen@realtorkmb.com',
+        router: false,
+        icon: {
+          component: markRaw(EnvelopeIcon),
           classes: []
         }
       }
