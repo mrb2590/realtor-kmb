@@ -6,11 +6,9 @@
 </script>
 
 <template>
-  <nav
-    class="z-20 w-full border-b border-primary-700 bg-white text-sm font-light shadow-md sm:border-0 sm:shadow-none"
-  >
+  <nav class="z-20 h-12 w-full bg-white text-sm font-light">
     <div
-      class="mx-auto flex w-full flex-row items-center justify-between space-x-6 px-4 py-2 sm:container"
+      class="mx-auto flex h-full w-full flex-row items-center justify-between space-x-6 px-4 py-2 sm:container"
     >
       <ul class="flex w-full basis-0 items-center space-x-3">
         <li class="flex flex-row items-center" v-for="link in links.social.subLinks">

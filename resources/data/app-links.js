@@ -57,6 +57,53 @@ const links = {
       }
     }
   },
+  services: {
+    title: 'Services',
+    href: route('dashboard'),
+    router: true,
+    icon: {
+      component: markRaw(InformationCircleIcon),
+      classes: []
+    },
+    subLinks: {
+      homeBuying: {
+        title: 'Buying Your Home',
+        href: route('dashboard'),
+        router: true,
+        icon: {
+          component: markRaw(ShoppingCartIcon),
+          classes: []
+        }
+      },
+      homeSelling: {
+        title: 'Selling Your Home',
+        href: route('dashboard'),
+        router: true,
+        icon: {
+          component: markRaw(TagIcon),
+          classes: []
+        }
+      },
+      homeStaging: {
+        title: 'Home Staging',
+        href: route('dashboard'),
+        router: true,
+        icon: {
+          component: markRaw(HomeModernIcon),
+          classes: []
+        }
+      },
+      expiredListings: {
+        title: 'Expired Listings',
+        href: route('dashboard'),
+        router: true,
+        icon: {
+          component: markRaw(ClockIcon),
+          classes: []
+        }
+      }
+    }
+  },
   contact: {
     title: 'Contact',
     href: route('dashboard'),
@@ -107,53 +154,6 @@ const links = {
         router: false,
         icon: {
           component: markRaw(EnvelopeIcon),
-          classes: []
-        }
-      }
-    }
-  },
-  services: {
-    title: 'Services',
-    href: route('dashboard'),
-    router: true,
-    icon: {
-      component: markRaw(InformationCircleIcon),
-      classes: []
-    },
-    subLinks: {
-      homeBuying: {
-        title: 'Buying Your Home',
-        href: route('dashboard'),
-        router: true,
-        icon: {
-          component: markRaw(ShoppingCartIcon),
-          classes: []
-        }
-      },
-      homeSelling: {
-        title: 'Selling Your Home',
-        href: route('dashboard'),
-        router: true,
-        icon: {
-          component: markRaw(TagIcon),
-          classes: []
-        }
-      },
-      homeStaging: {
-        title: 'Home Staging',
-        href: route('dashboard'),
-        router: true,
-        icon: {
-          component: markRaw(HomeModernIcon),
-          classes: []
-        }
-      },
-      expiredListings: {
-        title: 'Expired Listings',
-        href: route('dashboard'),
-        router: true,
-        icon: {
-          component: markRaw(ClockIcon),
           classes: []
         }
       }

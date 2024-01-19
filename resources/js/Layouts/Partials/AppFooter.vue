@@ -12,7 +12,7 @@
 </script>
 
 <template>
-  <footer class="w-full border-t border-primary-700 bg-primary-100">
+  <footer class="w-full border-primary-700 bg-gray-100">
     <!-- Container-->
     <div class="container mx-auto flex flex-row flex-wrap justify-evenly px-4 py-8 md:flex-nowrap">
       <!-- Left Side -->
