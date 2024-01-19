@@ -30,7 +30,7 @@
 
     <!-- Search Homes Form -->
     <div
-      :class="`relative flex h-full min-h-[calc(100vh_-_5rem)] w-full items-center justify-center bg-black bg-cover bg-fixed bg-center bg-no-repeat`"
+      class="relative flex h-full min-h-[calc(100vh_-_5rem)] w-full items-center justify-center bg-white bg-cover bg-fixed bg-center bg-no-repeat"
       :style="{ backgroundImage: `url(${BackgroundVideo})` }"
     >
       <div class="absolute left-0 top-0 h-full w-full"></div>
