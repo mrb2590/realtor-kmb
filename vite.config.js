@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
 import Icons from 'unplugin-icons/vite';
+import path from 'path';
 
 export default defineConfig({
   plugins: [
@@ -19,5 +20,11 @@ export default defineConfig({
         }
       }
     })
-  ]
+  ],
+  resolve: {
+    alias: {
+      'ziggy-js': path.resolve('vendor/tightenco/ziggy')
+      // 'vendor/tightenco/ziggy/dist/vue.es.js' if using the Vue plugin
+    }
+  }
 });

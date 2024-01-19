@@ -31,7 +31,6 @@
     const maxSize = Number(tailwindConfigRes.theme.screens.sm.replace('px', ''));
 
     if (window.innerWidth >= maxSize) {
-      console.log(tailwindConfigRes);
       mobileNavOpen.value = false;
     }
   };
@@ -152,6 +151,7 @@
           <ul class="w-full font-light uppercase" v-for="(link, linkName) in links">
             <li class="mb-4 w-full p-2" v-if="linkName !== 'home'">
               <AppLink
+                @click="mobileNavOpen = false"
                 :href="link.href"
                 :router="link.router"
                 class="text-base font-bold !text-primary-900"
@@ -162,6 +162,7 @@
               <ul class="w-full font-light uppercase" v-for="subLink in link.subLinks">
                 <li class="w-full p-2">
                   <AppLink
+                    @click="mobileNavOpen = false"
                     :href="subLink.href"
                     :router="subLink.router"
                     class="flex flex-row items-center space-x-2 text-sm !text-primary-900"

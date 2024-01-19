@@ -15,13 +15,15 @@ import InformationCircleIcon from '~icons/heroicons-outline/information-circle';
 import FacebookIcon from '~icons/fa6-brands/facebook';
 import LinkedInIcon from '~icons/fa6-brands/linkedin';
 import InstagramIcon from '~icons/fa6-brands/instagram';
+import route from 'ziggy-js';
+import { Ziggy } from '@/ziggy.js';
 
 export { links };
 
 const links = {
   home: {
     title: 'Home',
-    href: route('home'),
+    href: route('home', undefined, undefined, Ziggy),
     router: true,
     icon: {
       component: markRaw(HomeIcon),
@@ -30,7 +32,7 @@ const links = {
   },
   about: {
     title: 'About',
-    href: route('dashboard'),
+    href: route('dashboard', undefined, undefined, Ziggy),
     router: true,
     icon: {
       component: markRaw(InformationCircleIcon),
@@ -39,7 +41,7 @@ const links = {
     subLinks: {
       aboutUs: {
         title: 'About Us',
-        href: route('dashboard'),
+        href: route('dashboard', undefined, undefined, Ziggy),
         router: true,
         icon: {
           component: markRaw(InformationCircleIcon),
@@ -48,7 +50,7 @@ const links = {
       },
       meetTheTeam: {
         title: 'Meet the Team',
-        href: route('dashboard'),
+        href: route('dashboard', undefined, undefined, Ziggy),
         router: true,
         icon: {
           component: markRaw(UserGroupIcon),
@@ -59,7 +61,7 @@ const links = {
   },
   services: {
     title: 'Services',
-    href: route('dashboard'),
+    href: route('dashboard', undefined, undefined, Ziggy),
     router: true,
     icon: {
       component: markRaw(InformationCircleIcon),
@@ -68,7 +70,7 @@ const links = {
     subLinks: {
       homeBuying: {
         title: 'Buying Your Home',
-        href: route('dashboard'),
+        href: route('dashboard', undefined, undefined, Ziggy),
         router: true,
         icon: {
           component: markRaw(ShoppingCartIcon),
@@ -77,7 +79,7 @@ const links = {
       },
       homeSelling: {
         title: 'Selling Your Home',
-        href: route('dashboard'),
+        href: route('dashboard', undefined, undefined, Ziggy),
         router: true,
         icon: {
           component: markRaw(TagIcon),
@@ -86,7 +88,7 @@ const links = {
       },
       homeStaging: {
         title: 'Home Staging',
-        href: route('dashboard'),
+        href: route('dashboard', undefined, undefined, Ziggy),
         router: true,
         icon: {
           component: markRaw(HomeModernIcon),
@@ -95,7 +97,7 @@ const links = {
       },
       expiredListings: {
         title: 'Expired Listings',
-        href: route('dashboard'),
+        href: route('dashboard', undefined, undefined, Ziggy),
         router: true,
         icon: {
           component: markRaw(ClockIcon),
@@ -106,7 +108,7 @@ const links = {
   },
   contact: {
     title: 'Contact',
-    href: route('dashboard'),
+    href: route('dashboard', undefined, undefined, Ziggy),
     router: true,
     icon: {
       component: markRaw(UsersIcon),
@@ -115,7 +117,7 @@ const links = {
     subLinks: {
       messageForm: {
         title: 'Message Me',
-        href: route('dashboard'),
+        href: route('dashboard', undefined, undefined, Ziggy),
         router: true,
         icon: {
           component: markRaw(ChatBubbleLeftIcon),
@@ -167,7 +169,7 @@ const links = {
     subLinks: {
       linkedin: {
         title: 'LinkedIn',
-        href: route('dashboard'),
+        href: route('dashboard', undefined, undefined, Ziggy),
         router: false,
         icon: {
           component: markRaw(LinkedInIcon),
@@ -176,7 +178,7 @@ const links = {
       },
       facebook: {
         title: 'Facebook',
-        href: route('dashboard'),
+        href: route('dashboard', undefined, undefined, Ziggy),
         router: false,
         icon: {
           component: markRaw(FacebookIcon),
@@ -185,7 +187,7 @@ const links = {
       },
       instagram: {
         title: 'Instagram',
-        href: route('dashboard'),
+        href: route('dashboard', undefined, undefined, Ziggy),
         router: false,
         icon: {
           component: markRaw(InstagramIcon),
