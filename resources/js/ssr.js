@@ -6,7 +6,7 @@ import { createSSRApp, h } from 'vue';
 
 import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m';
 
-import.meta.glob(['../img/**', '../favicon/**']);
+import.meta.glob(['../img/**']);
 
 const appName = import.meta.env.VITE_APP_NAME || 'Realtor KMB';
 

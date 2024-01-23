@@ -3,10 +3,10 @@
   import { onMounted, onUnmounted, ref, watch } from 'vue';
 
   import tailwindConfig from '@/../../tailwind.config.js';
-  import { links } from '@/../data/app-links';
   import ApplicationLogo from '@/Components/ApplicationLogo.vue';
   import AppLink from '@/Components/AppLink.vue';
   import SecondaryButton from '@/Components/SecondaryButton.vue';
+  import { links } from '~data/app-links';
   import BarsIcon from '~icons/heroicons-outline/bars-3';
   import XMarkIcon from '~icons/heroicons-outline/x-mark';
 

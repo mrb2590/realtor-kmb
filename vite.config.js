@@ -23,6 +23,9 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
+      '~css': path.resolve('resources/css'),
+      '~data': path.resolve('resources/data'),
+      '~img': path.resolve('resources/img'),
       'ziggy-js': path.resolve('vendor/tightenco/ziggy')
     }
   }

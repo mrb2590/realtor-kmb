@@ -1,9 +1,6 @@
 <script setup>
   import { useForm } from '@inertiajs/vue3';
 
-  import AwardImg from '@/../img/home/award.png';
-  import BackgroundVideo from '@/../img/home/background-video-all.gif';
-  import PersonArmsFolded from '@/../img/home/person-arms-folded.png';
   import AppHead from '@/Components/AppHead.vue';
   import ApplicationLogo from '@/Components/ApplicationLogo.vue';
   import FormSelect from '@/Components/FormSelect.vue';
@@ -13,6 +10,9 @@
   import TextInput from '@/Components/TextInput.vue';
   import HomeLayout from '@/Layouts/HomeLayout.vue';
   import ChevronDownIcon from '~icons/heroicons-outline/chevron-down';
+  import AwardImg from '~img/home/award.png';
+  import BackgroundVideo from '~img/home/background-video-all.gif';
+  import PersonArmsFolded from '~img/home/person-arms-folded.png';
 
   defineOptions({ layout: HomeLayout });
 

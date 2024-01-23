@@ -1,7 +1,7 @@
 <script setup>
-  import { links } from '@/../data/app-links';
   import ApplicationLogo from '@/Components/ApplicationLogo.vue';
   import AppLink from '@/Components/AppLink.vue';
+  import { links } from '~data/app-links';
 
   const navLinks = {
     about: { ...links.about },

@@ -1,6 +1,6 @@
 <script setup>
-  import { links } from '@/../data/app-links';
   import AppLink from '@/Components/AppLink.vue';
+  import { links } from '~data/app-links';
 
   const { messageForm, ...filteredContactLinks } = links.contact.subLinks; // Filter out messageForm
 </script>
