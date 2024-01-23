@@ -26,14 +26,20 @@
     }
   };
 
-  watch(mobileNavOpen, preventScroll);
-
   const closeMobileNav = () => {
     const maxSize = Number(tailwindConfigRes.theme.screens.sm.replace('px', ''));
 
     if (window.innerWidth >= maxSize) {
       mobileNavOpen.value = false;
     }
+  };
+
+  const navLinks = {
+    about: { ...links.about },
+    contact: { ...links.contact },
+    home: { ...links.home },
+    services: { ...links.services },
+    listings: { ...links.listings }
   };
 
   onMounted(() => {
@@ -43,6 +49,8 @@
   onUnmounted(() => {
     window.removeEventListener('resize', closeMobileNav);
   });
+
+  watch(mobileNavOpen, preventScroll);
 </script>
 
 <template>
@@ -52,28 +60,25 @@
       <ul
         class="mx-auto flex h-full w-full max-w-4xl items-center justify-center text-xl font-light uppercase sm:space-x-6"
       >
-        <li class="hidden basis-1/6 items-center justify-center sm:flex">
+        <li
+          :class="{
+            'hidden basis-1/6 items-center justify-center sm:flex': linkName !== 'home',
+            'flex items-center justify-center sm:basis-1/3': linkName === 'home'
+          }"
+          v-for="(navLink, linkName) in navLinks"
+          :key="linkName"
+        >
           <AppLink
-            :href="links.about.href"
-            :router="links.about.router"
+            v-if="linkName !== 'home'"
+            :href="navLink.href"
+            :router="navLink.router"
             class="text-center text-base md:text-xl"
           >
-            {{ links.about.title }}
+            {{ navLink.title }}
           </AppLink>
-        </li>
 
-        <li class="hidden basis-1/6 items-center justify-center sm:flex">
           <AppLink
-            :href="links.contact.href"
-            :router="links.contact.router"
-            class="text-center text-base md:text-xl"
-          >
-            {{ links.contact.title }}
-          </AppLink>
-        </li>
-
-        <li class="flex items-center justify-center sm:basis-1/3">
-          <AppLink
+            v-else
             :href="links.home.href"
             :router="links.home.router"
             class="mx-6 w-full max-w-32 text-center sm:max-w-48"
@@ -84,26 +89,6 @@
               class="h-full w-full"
               :class="links.home.icon.classes"
             />
-          </AppLink>
-        </li>
-
-        <li class="hidden basis-1/6 items-center justify-center sm:flex">
-          <AppLink
-            :href="links.services.href"
-            :router="links.services.router"
-            class="text-center text-base md:text-xl"
-          >
-            {{ links.services.title }}
-          </AppLink>
-        </li>
-
-        <li class="hidden basis-1/6 items-center justify-center sm:flex">
-          <AppLink
-            :href="links.listings.href"
-            :router="links.listings.router"
-            class="text-center text-base md:text-xl"
-          >
-            {{ links.listings.title }}
           </AppLink>
         </li>
       </ul>
@@ -150,12 +135,12 @@
       >
         <div class="h-full w-full overflow-auto px-4 py-4">
           <ul class="w-full font-light uppercase" v-for="(link, linkName) in links" :key="linkName">
-            <li class="mb-4 w-full p-2" v-if="linkName !== 'home'">
+            <li class="mb-4 flex flex-col p-2" v-if="linkName !== 'home'">
               <AppLink
                 @click="mobileNavOpen = false"
                 :href="link.href"
                 :router="link.router"
-                class="text-base font-bold !text-primary-900"
+                class="flex flex-row items-center text-base font-bold !text-primary-900"
               >
                 <span> {{ link.title }} </span>
               </AppLink>
@@ -165,7 +150,7 @@
                 v-for="(subLink, subLinkName) in link.subLinks"
                 :key="`${linkName}-${subLinkName}`"
               >
-                <li class="w-full p-2">
+                <li class="flex flex-row p-2">
                   <AppLink
                     @click="mobileNavOpen = false"
                     :href="subLink.href"
