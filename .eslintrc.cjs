@@ -13,15 +13,23 @@ module.exports = {
       parserOptions: {
         sourceType: 'script'
       }
+    },
+    {
+      files: ['*.vue'],
+      rules: {
+        indent: 'off',
+        'no-undef': 'off'
+      }
     }
   ],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: ['vue', 'simple-import-sort'],
+  plugins: ['vue', 'import', 'simple-import-sort'],
   rules: {
     'comma-dangle': ['error', 'never'],
+    'import/first': 'error',
     indent: ['error', 2],
     semi: ['error', 'always'],
     'simple-import-sort/exports': 'error',
@@ -46,6 +54,7 @@ module.exports = {
         math: 'always'
       }
     ],
+    'vue/multi-word-component-names': 'off',
     'vue/script-indent': [
       'error',
       2,

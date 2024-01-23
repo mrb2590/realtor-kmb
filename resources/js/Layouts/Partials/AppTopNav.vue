@@ -1,6 +1,6 @@
 <script setup>
-  import AppLink from '@/Components/AppLink.vue';
   import { links } from '@/../data/app-links';
+  import AppLink from '@/Components/AppLink.vue';
 
   const { messageForm, ...filteredContactLinks } = links.contact.subLinks; // Filter out messageForm
 </script>
@@ -11,7 +11,11 @@
       class="mx-auto flex h-full w-full flex-row items-center justify-between space-x-6 px-4 py-2 sm:container"
     >
       <ul class="flex w-full basis-0 items-center space-x-3">
-        <li class="flex flex-row items-center" v-for="link in links.social.subLinks">
+        <li
+          class="flex flex-row items-center"
+          v-for="(link, linkName) in links.social.subLinks"
+          :key="linkName"
+        >
           <AppLink
             :href="link.href"
             :router="link.router"
@@ -26,6 +30,7 @@
         <li
           class="flex-row items-center space-x-2"
           v-for="(link, linkName) in filteredContactLinks"
+          :key="linkName"
         >
           <AppLink
             :href="link.href"

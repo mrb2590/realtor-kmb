@@ -1,6 +1,6 @@
 <script setup>
-  import HomeLayout from '@/Layouts/HomeLayout.vue';
   import AppHead from '@/Components/AppHead.vue';
+  import HomeLayout from '@/Layouts/HomeLayout.vue';
 
   defineOptions({ layout: HomeLayout });
 </script>

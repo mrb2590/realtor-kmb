@@ -32,7 +32,12 @@
     @input="$emit('update:modelValue', $event.target.value)"
     ref="select"
   >
-    <option v-for="option in options" :value="option.value" :selected="option.selected">
+    <option
+      v-for="(option, i) in options"
+      :value="option.value"
+      :selected="option.selected"
+      :key="i"
+    >
       {{ option.label }}
     </option>
   </select>

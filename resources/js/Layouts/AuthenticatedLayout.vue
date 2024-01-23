@@ -1,9 +1,10 @@
 <script setup>
   import { ref } from 'vue';
+
   import ApplicationIcon from '@/Components/ApplicationIcon.vue';
+  import AppLink from '@/Components/AppLink.vue';
   import Dropdown from '@/Components/Dropdown.vue';
   import DropdownLink from '@/Components/DropdownLink.vue';
-  import AppLink from '@/Components/AppLink.vue';
   import NavLink from '@/Components/NavLink.vue';
   import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 

@@ -1,17 +1,18 @@
 <script setup>
-  import HomeLayout from '@/Layouts/HomeLayout.vue';
-  import ApplicationLogo from '@/Components/ApplicationLogo.vue';
-  import AppHead from '@/Components/AppHead.vue';
-  import BackgroundVideo from '@/../img/home/background-video-all.gif';
-  import InputLabel from '@/Components/InputLabel.vue';
-  import InputError from '@/Components/InputError.vue';
-  import TextInput from '@/Components/TextInput.vue';
-  import FormSelect from '@/Components/FormSelect.vue';
-  import PrimaryButton from '@/Components/PrimaryButton.vue';
-  import PersonArmsFolded from '@/../img/home/person-arms-folded.png';
-  import AwardImg from '@/../img/home/award.png';
-  import ChevronDownIcon from '~icons/heroicons-outline/chevron-down';
   import { useForm } from '@inertiajs/vue3';
+
+  import AwardImg from '@/../img/home/award.png';
+  import BackgroundVideo from '@/../img/home/background-video-all.gif';
+  import PersonArmsFolded from '@/../img/home/person-arms-folded.png';
+  import AppHead from '@/Components/AppHead.vue';
+  import ApplicationLogo from '@/Components/ApplicationLogo.vue';
+  import FormSelect from '@/Components/FormSelect.vue';
+  import InputError from '@/Components/InputError.vue';
+  import InputLabel from '@/Components/InputLabel.vue';
+  import PrimaryButton from '@/Components/PrimaryButton.vue';
+  import TextInput from '@/Components/TextInput.vue';
+  import HomeLayout from '@/Layouts/HomeLayout.vue';
+  import ChevronDownIcon from '~icons/heroicons-outline/chevron-down';
 
   defineOptions({ layout: HomeLayout });
 
@@ -33,7 +34,7 @@
       class="relative flex h-full min-h-[calc(100vh_-_5rem)] w-full items-center justify-center bg-white bg-cover bg-fixed bg-center bg-no-repeat"
       :style="{ backgroundImage: `url(${BackgroundVideo})` }"
     >
-      <div class="absolute left-0 top-0 h-full w-full"></div>
+      <div class="absolute left-0 top-0 h-full w-full" />
       <form
         @submit.prevent="updatePassword"
         class="z-10 mt-6 w-full max-w-4xl space-y-6 rounded bg-black/50 p-8 shadow-lg"
@@ -213,7 +214,7 @@
           <div
             class="min-h-52 w-1/3 bg-contain bg-center bg-no-repeat"
             :style="{ backgroundImage: `url(${PersonArmsFolded})` }"
-          ></div>
+          />
           <div class="flex w-2/3 items-center">
             <p class="text-center text-xl font-light">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod, nunc quis

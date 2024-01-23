@@ -1,23 +1,24 @@
 import { markRaw } from 'vue';
-import EnvelopeIcon from '~icons/heroicons-outline/envelope';
-import DevicePhoneMobileIcon from '~icons/heroicons-outline/device-phone-mobile';
+import route from 'ziggy-js';
+
+import { Ziggy } from '@/ziggy.js';
+import FacebookIcon from '~icons/fa6-brands/facebook';
+import InstagramIcon from '~icons/fa6-brands/instagram';
+import LinkedInIcon from '~icons/fa6-brands/linkedin';
 import BuildingOfficeIcon from '~icons/heroicons-outline/building-office';
-import TagIcon from '~icons/heroicons-outline/tag';
-import ShoppingCartIcon from '~icons/heroicons-outline/shopping-cart';
 import ChatBubbleLeftIcon from '~icons/heroicons-outline/chat-bubble-left';
-import HomeModernIcon from '~icons/heroicons-outline/home-modern';
 import ClockIcon from '~icons/heroicons-outline/clock';
+import DevicePhoneMobileIcon from '~icons/heroicons-outline/device-phone-mobile';
+import EnvelopeIcon from '~icons/heroicons-outline/envelope';
+import HomeIcon from '~icons/heroicons-outline/home';
+import HomeModernIcon from '~icons/heroicons-outline/home-modern';
+import InformationCircleIcon from '~icons/heroicons-outline/information-circle';
+import MagnifyingGlassIcon from '~icons/heroicons-outline/magnifying-glass';
+import PhoneIcon from '~icons/heroicons-outline/phone';
+import ShoppingCartIcon from '~icons/heroicons-outline/shopping-cart';
+import TagIcon from '~icons/heroicons-outline/tag';
 import UserGroupIcon from '~icons/heroicons-outline/user-group';
 import UsersIcon from '~icons/heroicons-outline/users';
-import HomeIcon from '~icons/heroicons-outline/home';
-import PhoneIcon from '~icons/heroicons-outline/phone';
-import MagnifyingGlassIcon from '~icons/heroicons-outline/magnifying-glass';
-import InformationCircleIcon from '~icons/heroicons-outline/information-circle';
-import FacebookIcon from '~icons/fa6-brands/facebook';
-import LinkedInIcon from '~icons/fa6-brands/linkedin';
-import InstagramIcon from '~icons/fa6-brands/instagram';
-import route from 'ziggy-js';
-import { Ziggy } from '@/ziggy.js';
 
 export { links };
 
