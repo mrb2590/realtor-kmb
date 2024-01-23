@@ -1,10 +1,11 @@
 <script setup>
+  import { useForm, usePage } from '@inertiajs/vue3';
+
+  import AppLink from '@/Components/AppLink.vue';
   import InputError from '@/Components/InputError.vue';
   import InputLabel from '@/Components/InputLabel.vue';
   import PrimaryButton from '@/Components/PrimaryButton.vue';
   import TextInput from '@/Components/TextInput.vue';
-  import AppLink from '@/Components/AppLink.vue';
-  import { useForm, usePage } from '@inertiajs/vue3';
 
   defineProps({
     mustVerifyEmail: {

@@ -1,9 +1,10 @@
 <script setup>
-  import { computed } from 'vue';
-  import GuestLayout from '@/Layouts/GuestLayout.vue';
-  import PrimaryButton from '@/Components/PrimaryButton.vue';
-  import AppLink from '@/Components/AppLink.vue';
   import { Head, useForm } from '@inertiajs/vue3';
+  import { computed } from 'vue';
+
+  import AppLink from '@/Components/AppLink.vue';
+  import PrimaryButton from '@/Components/PrimaryButton.vue';
+  import GuestLayout from '@/Layouts/GuestLayout.vue';
 
   const props = defineProps({
     status: {

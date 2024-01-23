@@ -2,6 +2,7 @@
   "better-phpunit.phpunitBinary": "/var/www/html/vendor/bin/phpunit",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
+    // "source.organizeImports": "explicit"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,

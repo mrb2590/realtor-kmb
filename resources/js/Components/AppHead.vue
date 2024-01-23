@@ -13,8 +13,8 @@
     }
   });
 
-  const appName = import.meta.env.VITE_APP_NAME ?? 'Realtor KMB';
-  const pageTitle = props.title ? `${props.title} - ${appName}` : appName;
+  // const appName = import.meta.env.VITE_APP_NAME ?? 'Realtor KMB';
+  // const pageTitle = props.title ? `${props.title} - ${appName}` : appName;
 </script>
 
 <template>

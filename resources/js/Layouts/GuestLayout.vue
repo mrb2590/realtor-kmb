@@ -1,6 +1,6 @@
 <script setup>
-  import AppLink from '@/Components/AppLink.vue';
   import ApplicationLogo from '@/Components/ApplicationLogo.vue';
+  import AppLink from '@/Components/AppLink.vue';
 </script>
 
 <template>

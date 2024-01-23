@@ -1,13 +1,14 @@
 <script setup>
+  import resolveConfig from 'tailwindcss/resolveConfig';
+  import { onMounted, onUnmounted, ref, watch } from 'vue';
+
+  import tailwindConfig from '@/../../tailwind.config.js';
+  import { links } from '@/../data/app-links';
   import ApplicationLogo from '@/Components/ApplicationLogo.vue';
   import AppLink from '@/Components/AppLink.vue';
-  import BarsIcon from '~icons/heroicons-outline/bars-3';
-  import { links } from '@/../data/app-links';
   import SecondaryButton from '@/Components/SecondaryButton.vue';
+  import BarsIcon from '~icons/heroicons-outline/bars-3';
   import XMarkIcon from '~icons/heroicons-outline/x-mark';
-  import { ref, watch, onMounted, onUnmounted } from 'vue';
-  import resolveConfig from 'tailwindcss/resolveConfig';
-  import tailwindConfig from '@/../../tailwind.config.js';
 
   const tailwindConfigRes = resolveConfig(tailwindConfig);
 
@@ -148,7 +149,7 @@
         v-if="mobileNavOpen"
       >
         <div class="h-full w-full overflow-auto px-4 py-4">
-          <ul class="w-full font-light uppercase" v-for="(link, linkName) in links">
+          <ul class="w-full font-light uppercase" v-for="(link, linkName) in links" :key="linkName">
             <li class="mb-4 w-full p-2" v-if="linkName !== 'home'">
               <AppLink
                 @click="mobileNavOpen = false"
@@ -159,7 +160,11 @@
                 <span> {{ link.title }} </span>
               </AppLink>
 
-              <ul class="w-full font-light uppercase" v-for="subLink in link.subLinks">
+              <ul
+                class="w-full font-light uppercase"
+                v-for="(subLink, subLinkName) in link.subLinks"
+                :key="`${linkName}-${subLinkName}`"
+              >
                 <li class="w-full p-2">
                   <AppLink
                     @click="mobileNavOpen = false"

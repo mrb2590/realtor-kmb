@@ -3,8 +3,10 @@
 /public
 /storage
 /vendor
+/bootstrap
 .phpunit.result.cache
 auth.json
 *.log
 /.fleet
 /.idea
+ziggy.js
