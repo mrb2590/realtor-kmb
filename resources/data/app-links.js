@@ -11,6 +11,7 @@ import UserGroupIcon from '~icons/heroicons-outline/user-group';
 import UsersIcon from '~icons/heroicons-outline/users';
 import HomeIcon from '~icons/heroicons-outline/home';
 import PhoneIcon from '~icons/heroicons-outline/phone';
+import MagnifyingGlassIcon from '~icons/heroicons-outline/magnifying-glass';
 import InformationCircleIcon from '~icons/heroicons-outline/information-circle';
 import FacebookIcon from '~icons/fa6-brands/facebook';
 import LinkedInIcon from '~icons/fa6-brands/linkedin';
@@ -32,7 +33,7 @@ const links = {
   },
   about: {
     title: 'About',
-    href: route('dashboard', undefined, undefined, Ziggy),
+    href: route('about', undefined, undefined, Ziggy),
     router: true,
     icon: {
       component: markRaw(InformationCircleIcon),
@@ -41,7 +42,7 @@ const links = {
     subLinks: {
       aboutUs: {
         title: 'About Us',
-        href: route('dashboard', undefined, undefined, Ziggy),
+        href: route('about', undefined, undefined, Ziggy),
         router: true,
         icon: {
           component: markRaw(InformationCircleIcon),
@@ -50,7 +51,7 @@ const links = {
       },
       meetTheTeam: {
         title: 'Meet the Team',
-        href: route('dashboard', undefined, undefined, Ziggy),
+        href: route('about', undefined, undefined, Ziggy),
         router: true,
         icon: {
           component: markRaw(UserGroupIcon),
@@ -59,56 +60,9 @@ const links = {
       }
     }
   },
-  services: {
-    title: 'Services',
-    href: route('dashboard', undefined, undefined, Ziggy),
-    router: true,
-    icon: {
-      component: markRaw(InformationCircleIcon),
-      classes: []
-    },
-    subLinks: {
-      homeBuying: {
-        title: 'Buying Your Home',
-        href: route('dashboard', undefined, undefined, Ziggy),
-        router: true,
-        icon: {
-          component: markRaw(ShoppingCartIcon),
-          classes: []
-        }
-      },
-      homeSelling: {
-        title: 'Selling Your Home',
-        href: route('dashboard', undefined, undefined, Ziggy),
-        router: true,
-        icon: {
-          component: markRaw(TagIcon),
-          classes: []
-        }
-      },
-      homeStaging: {
-        title: 'Home Staging',
-        href: route('dashboard', undefined, undefined, Ziggy),
-        router: true,
-        icon: {
-          component: markRaw(HomeModernIcon),
-          classes: []
-        }
-      },
-      expiredListings: {
-        title: 'Expired Listings',
-        href: route('dashboard', undefined, undefined, Ziggy),
-        router: true,
-        icon: {
-          component: markRaw(ClockIcon),
-          classes: []
-        }
-      }
-    }
-  },
   contact: {
     title: 'Contact',
-    href: route('dashboard', undefined, undefined, Ziggy),
+    href: route('contact', undefined, undefined, Ziggy),
     router: true,
     icon: {
       component: markRaw(UsersIcon),
@@ -117,7 +71,7 @@ const links = {
     subLinks: {
       messageForm: {
         title: 'Message Me',
-        href: route('dashboard', undefined, undefined, Ziggy),
+        href: route('contact', undefined, undefined, Ziggy),
         router: true,
         icon: {
           component: markRaw(ChatBubbleLeftIcon),
@@ -156,6 +110,73 @@ const links = {
         router: false,
         icon: {
           component: markRaw(EnvelopeIcon),
+          classes: []
+        }
+      }
+    }
+  },
+  services: {
+    title: 'Services',
+    href: route('services', undefined, undefined, Ziggy),
+    router: true,
+    icon: {
+      component: markRaw(InformationCircleIcon),
+      classes: []
+    },
+    subLinks: {
+      homeBuying: {
+        title: 'Buying Your Home',
+        href: route('services', undefined, undefined, Ziggy),
+        router: true,
+        icon: {
+          component: markRaw(ShoppingCartIcon),
+          classes: []
+        }
+      },
+      homeSelling: {
+        title: 'Selling Your Home',
+        href: route('services', undefined, undefined, Ziggy),
+        router: true,
+        icon: {
+          component: markRaw(TagIcon),
+          classes: []
+        }
+      },
+      homeStaging: {
+        title: 'Home Staging',
+        href: route('services', undefined, undefined, Ziggy),
+        router: true,
+        icon: {
+          component: markRaw(HomeModernIcon),
+          classes: []
+        }
+      },
+      expiredListings: {
+        title: 'Expired Listings',
+        href: route('services', undefined, undefined, Ziggy),
+        router: true,
+        icon: {
+          component: markRaw(ClockIcon),
+          classes: []
+        }
+      }
+    }
+  },
+  listing: {
+    title: 'Listings',
+    href: route('listing', undefined, undefined, Ziggy),
+    router: true,
+    icon: {
+      component: markRaw(UsersIcon),
+      classes: []
+    },
+    subLinks: {
+      listingForm: {
+        title: 'Find your Dream Home',
+        href: route('listing', undefined, undefined, Ziggy),
+        router: true,
+        icon: {
+          component: markRaw(MagnifyingGlassIcon),
           classes: []
         }
       }
