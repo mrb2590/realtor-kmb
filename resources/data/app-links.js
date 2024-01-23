@@ -19,6 +19,7 @@ import ShoppingCartIcon from '~icons/heroicons-outline/shopping-cart';
 import TagIcon from '~icons/heroicons-outline/tag';
 import UserGroupIcon from '~icons/heroicons-outline/user-group';
 import UsersIcon from '~icons/heroicons-outline/users';
+import StarSolidIcon from '~icons/heroicons-solid/star';
 
 export { links };
 
@@ -163,18 +164,27 @@ const links = {
       }
     }
   },
-  listing: {
+  listings: {
     title: 'Listings',
-    href: route('listing', undefined, undefined, Ziggy),
+    href: route('listings', undefined, undefined, Ziggy),
     router: true,
     icon: {
       component: markRaw(UsersIcon),
       classes: []
     },
     subLinks: {
-      listingForm: {
-        title: 'Find your Dream Home',
-        href: route('listing', undefined, undefined, Ziggy),
+      featured: {
+        title: 'Featured Listings',
+        href: route('listings', undefined, undefined, Ziggy),
+        router: true,
+        icon: {
+          component: markRaw(StarSolidIcon),
+          classes: []
+        }
+      },
+      search: {
+        title: 'Search any Listing',
+        href: route('listings', undefined, undefined, Ziggy),
         router: true,
         icon: {
           component: markRaw(MagnifyingGlassIcon),

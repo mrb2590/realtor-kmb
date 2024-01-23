@@ -99,11 +99,11 @@
 
         <li class="hidden basis-1/6 items-center justify-center sm:flex">
           <AppLink
-            :href="links.listing.href"
-            :router="links.listing.router"
+            :href="links.listings.href"
+            :router="links.listings.router"
             class="text-center text-base md:text-xl"
           >
-            {{ links.listing.title }}
+            {{ links.listings.title }}
           </AppLink>
         </li>
       </ul>
@@ -127,8 +127,8 @@
           appear
           mode="out-in"
         >
-          <BarsIcon class="h-6 w-6 text-primary-700" v-if="!mobileNavOpen" />
-          <XMarkIcon class="h-6 w-6 text-primary-700" v-else />
+          <XMarkIcon class="h-6 w-6 text-primary-700" v-if="mobileNavOpen" />
+          <BarsIcon class="h-6 w-6 text-primary-700" v-else />
         </Transition>
       </SecondaryButton>
     </div>

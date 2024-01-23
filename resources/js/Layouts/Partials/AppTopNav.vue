@@ -2,7 +2,8 @@
   import AppLink from '@/Components/AppLink.vue';
   import { links } from '~data/app-links';
 
-  const { messageForm, ...filteredContactLinks } = links.contact.subLinks; // Filter out messageForm
+  const { cellPhone, officePhone, email } = links.contact.subLinks;
+  const contactLinks = { cellPhone, officePhone, email };
 </script>
 
 <template>
@@ -29,7 +30,7 @@
       <ul class="flex w-full items-center justify-end space-x-3">
         <li
           class="flex-row items-center space-x-2"
-          v-for="(link, linkName) in filteredContactLinks"
+          v-for="(link, linkName) in contactLinks"
           :key="linkName"
         >
           <AppLink

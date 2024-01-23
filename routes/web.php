@@ -5,7 +5,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FaviconController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ListingController;
+use App\Http\Controllers\ListingsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\WebAppManifestController;
@@ -31,7 +31,7 @@ Route::get('/site.webmanifest', [WebAppManifestController::class, 'show']);
 Route::get('/about', [AboutController::class, 'show'])->name('about');
 Route::get('/services', [ServicesController::class, 'show'])->name('services');
 Route::get('/contact', [ContactController::class, 'show'])->name('contact');
-Route::get('/listings', [ListingController::class, 'show'])->name('listing');
+Route::get('/listings', [ListingsController::class, 'show'])->name('listings');
 
 Route::get('/dashboard', [DashboardController::class, 'show'])
     ->middleware(['auth', 'verified'])

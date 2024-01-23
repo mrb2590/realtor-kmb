@@ -7,8 +7,7 @@
     about: { ...links.about },
     contact: { ...links.contact },
     services: { ...links.services },
-    listing: { ...links.listing },
-    social: { ...links.social }
+    listings: { ...links.listings }
   };
 </script>
 
@@ -38,7 +37,7 @@
 
       <!-- Right Side -->
       <nav
-        class="items-cemter order-first flex basis-full items-center justify-center md:order-last md:basis-3/5 lg:basis-5/6"
+        class="items-cemter order-first flex basis-full flex-col items-center justify-center space-y-6 md:order-last md:basis-3/5 lg:basis-5/6"
       >
         <div
           class="flex w-full max-w-[30rem] flex-row flex-wrap items-start justify-between lg:max-w-full"
@@ -59,6 +58,24 @@
               </li>
             </ul>
           </div>
+        </div>
+        <div class="flex w-full flex-row flex-wrap items-center justify-center md:justify-end">
+          <ul class="flex w-full basis-0 items-center space-x-3">
+            <li
+              class="flex flex-row items-center"
+              v-for="(link, linkName) in links.social.subLinks"
+              :key="linkName"
+            >
+              <AppLink
+                :href="link.href"
+                :router="link.router"
+                :title="link.title"
+                class="rounded-full border border-gray-200 bg-white p-1 text-lg shadow-sm"
+              >
+                <component :is="link.icon.component" v-if="link.icon" :class="link.icon.classes" />
+              </AppLink>
+            </li>
+          </ul>
         </div>
       </nav>
     </div>
