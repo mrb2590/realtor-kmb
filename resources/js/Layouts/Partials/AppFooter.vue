@@ -7,6 +7,7 @@
     about: { ...links.about },
     contact: { ...links.contact },
     services: { ...links.services },
+    listing: { ...links.listing },
     social: { ...links.social }
   };
 </script>
@@ -23,14 +24,14 @@
         <div class="flex w-full flex-col items-center justify-center space-y-2">
           <ApplicationLogo class="mb-4 h-auto w-full max-w-52" />
 
-          <div class="text-center text-sm text-gray-600">
-            &copy; 2024 Karen Buonomo, realtorkmb.com. All rights reserved.
+          <div class="text-center text-xs text-gray-600">
+            &copy; {{ new Date().getFullYear() }} Karen Buonomo, realtorkmb.com. All rights
+            reserved.
           </div>
 
-          <div class="text-center text-sm text-gray-600">
-            <AppLink href="#" class="text-sm"> Privacy Policy </AppLink>
-            |
-            <AppLink href="#" class="text-sm"> Terms & Conditions </AppLink>
+          <div class="text-center text-gray-600">
+            <AppLink href="#" class="mr-2 text-xs"> Privacy Policy </AppLink>
+            <AppLink href="#" class="text-xs"> Terms & Conditions </AppLink>
           </div>
         </div>
       </div>

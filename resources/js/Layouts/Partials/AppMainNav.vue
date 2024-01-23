@@ -63,11 +63,11 @@
 
         <li class="hidden basis-1/6 items-center justify-center sm:flex">
           <AppLink
-            :href="links.services.href"
-            :router="links.services.router"
+            :href="links.contact.href"
+            :router="links.contact.router"
             class="text-center text-base md:text-xl"
           >
-            {{ links.services.title }}
+            {{ links.contact.title }}
           </AppLink>
         </li>
 
@@ -88,21 +88,21 @@
 
         <li class="hidden basis-1/6 items-center justify-center sm:flex">
           <AppLink
-            :href="links.contact.href"
-            :router="links.contact.router"
+            :href="links.services.href"
+            :router="links.services.router"
             class="text-center text-base md:text-xl"
           >
-            {{ links.contact.title }}
+            {{ links.services.title }}
           </AppLink>
         </li>
 
         <li class="hidden basis-1/6 items-center justify-center sm:flex">
           <AppLink
-            :href="links.contact.href"
-            :router="links.contact.router"
+            :href="links.listing.href"
+            :router="links.listing.router"
             class="text-center text-base md:text-xl"
           >
-            {{ links.contact.title }}
+            {{ links.listing.title }}
           </AppLink>
         </li>
       </ul>

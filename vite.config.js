@@ -24,7 +24,6 @@ export default defineConfig({
   resolve: {
     alias: {
       'ziggy-js': path.resolve('vendor/tightenco/ziggy')
-      // 'vendor/tightenco/ziggy/dist/vue.es.js' if using the Vue plugin
     }
   }
 });
