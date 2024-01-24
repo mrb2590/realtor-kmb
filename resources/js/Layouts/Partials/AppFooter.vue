@@ -6,9 +6,9 @@
 
   const navLinks = {
     about: { ...links.about },
-    contact: { ...links.contact },
     services: { ...links.services },
-    listings: { ...links.listings }
+    listings: { ...links.listings },
+    contact: { ...links.contact }
   };
 </script>
 
@@ -30,8 +30,12 @@
           </div>
 
           <div class="text-center text-gray-600">
-            <AppLink href="#" class="mr-2 text-xs"> Privacy Policy </AppLink>
-            <AppLink href="#" class="text-xs"> Terms & Conditions </AppLink>
+            <AppLink :z-route="links.privacyPolicy.zRoute" class="mr-2 text-xs">
+              {{ links.privacyPolicy.title }}
+            </AppLink>
+            <AppLink :z-route="links.termsConditions.zRoute" class="text-xs">
+              {{ links.termsConditions.title }}
+            </AppLink>
           </div>
         </div>
       </div>
@@ -53,7 +57,7 @@
                 :key="`${linkName}-${subLinkName}`"
               >
                 <component :is="link.icon.component" v-if="link.icon" :class="link.icon.classes" />
-                <AppLink :href="link.href" :router="link.router">
+                <AppLink :z-route="link.zroute" :link-to="link.href">
                   {{ link.title }}
                 </AppLink>
               </li>

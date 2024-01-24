@@ -21,7 +21,7 @@
             <div class="flex">
               <!-- Logo -->
               <div class="flex shrink-0 items-center">
-                <AppLink :href="route('dashboard')">
+                <AppLink :z-route="route('dashboard')">
                   <AppIcon class="block h-9 w-auto fill-current" />
                 </AppLink>
               </div>

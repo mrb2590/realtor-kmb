@@ -79,7 +79,7 @@
       </div>
 
       <div class="mt-4 flex items-center justify-end">
-        <AppLink v-if="canResetPassword" :href="route('password.request')">
+        <AppLink v-if="canResetPassword" :z-route="route('password.request')">
           Forgot your password?
         </AppLink>
 

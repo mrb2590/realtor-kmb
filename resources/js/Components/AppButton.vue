@@ -8,7 +8,7 @@
       default: null
     },
     zRoute: {
-      type: String,
+      type: Object,
       default: null
     },
     processing: {
@@ -25,10 +25,6 @@
       validator(value) {
         return ['primary', 'secondary', 'success', 'danger'].includes(value);
       }
-    },
-    raised: {
-      type: Boolean,
-      default: false
     }
   });
 
@@ -92,17 +88,13 @@
   if (props.href) {
     classes.value.push('processing:pointer-events-none');
   }
-
-  if (props.raised) {
-    classes.value.push('raised');
-  }
 </script>
 
 <template>
   <Link
     v-if="props.zRoute"
     :data-processing="props.processing"
-    :href="props.zRoute"
+    :href="route(props.zRoute.name, props.zRoute.params, props.zRoute.absolute)"
     :class="classes.concat(variantClasses[props.variant])"
   >
     <span v-if="props.processingText && props.processing">
@@ -110,6 +102,7 @@
     </span>
     <slot v-else />
   </Link>
+
   <a
     v-else-if="props.href"
     :data-processing="props.processing"
@@ -121,6 +114,7 @@
     </span>
     <slot v-else />
   </a>
+
   <button
     v-else
     :data-processing="props.processing"

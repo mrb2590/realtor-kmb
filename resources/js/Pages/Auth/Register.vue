@@ -89,7 +89,7 @@
       </div>
 
       <div class="mt-4 flex items-center justify-end">
-        <AppLink :href="route('login')"> Already registered? </AppLink>
+        <AppLink :z-route="route('login')"> Already registered? </AppLink>
 
         <AppButton class="ms-4" :processing="form.processing" variant="primary" type="submit">
           Register

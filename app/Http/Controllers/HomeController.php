@@ -12,6 +12,6 @@ class HomeController extends Controller
      */
     public function show(): Response
     {
-        return Inertia::render('Home/Show');
+        return Inertia::render('Home');
     }
 }

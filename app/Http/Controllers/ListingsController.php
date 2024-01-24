@@ -12,6 +12,6 @@ class ListingsController extends Controller
      */
     public function show(): Response
     {
-        return Inertia::render('Listings/Show');
+        return Inertia::render('Listings');
     }
 }

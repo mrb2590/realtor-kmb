@@ -1,5 +1,5 @@
 <script setup>
-  import AppLink from '@/Components/AppLink.vue';
+  import AppButton from '@/Components/AppButton.vue';
   import { links } from '~data/app-links';
 </script>
 
@@ -10,14 +10,15 @@
       v-for="(link, linkName) in links.social.subLinks"
       :key="linkName"
     >
-      <AppLink
+      <AppButton
+        :z-route="link.route"
         :href="link.href"
-        :router="link.router"
         :title="link.title"
-        class="rounded border border-gray-300 bg-white p-1 shadow-sm"
+        variant="secondary"
+        class="!p-1"
       >
         <component :is="link.icon.component" v-if="link.icon" :class="link.icon.classes" />
-      </AppLink>
+      </AppButton>
     </li>
   </ul>
 </template>

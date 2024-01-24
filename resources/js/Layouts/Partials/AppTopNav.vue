@@ -1,5 +1,5 @@
 <script setup>
-  import AppLink from '@/Components/AppLink.vue';
+  import AppButton from '@/Components/AppButton.vue';
   import SocialLinks from '@/Layouts/Partials/SocialLinks.vue';
   import { links } from '~data/app-links';
 
@@ -19,18 +19,20 @@
           v-for="(link, linkName) in contactLinks"
           :key="linkName"
         >
-          <AppLink
+          <AppButton
+            :z-route="link.zRoute"
             :href="link.href"
-            :router="link.router"
-            class="flex flex-row items-center whitespace-nowrap rounded-full border border-gray-200 bg-white p-1 shadow-sm sm:rounded sm:border-0 sm:p-0 sm:shadow-none"
+            :title="link.title"
+            variant="secondary"
+            class="flex flex-row items-center rounded-full bg-white !p-1 md:rounded md:border-transparent md:!text-xs"
           >
             <component
               v-if="linkName === 'cellPhone2' ? link.iconAlt : link.icon"
               :is="linkName === 'cellPhone2' ? link.iconAlt.component : link.icon.component"
               :class="link.icon.classes"
             />
-            <span class="ml-1 hidden sm:block"> {{ link.title }} </span>
-          </AppLink>
+            <span class="ml-1 hidden md:block"> {{ link.title }} </span>
+          </AppButton>
         </li>
       </ul>
     </div>

@@ -44,7 +44,7 @@
           Resend Verification Email
         </AppButton>
 
-        <AppLink :href="route('logout')" method="post" as="button" class="underline">
+        <AppLink :z-route="route('logout')" method="post" as="button" class="underline">
           Log Out
         </AppLink>
       </div>

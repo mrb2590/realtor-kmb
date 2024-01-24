@@ -2,9 +2,13 @@
   import { Link } from '@inertiajs/vue3';
 
   const props = defineProps({
-    router: {
-      type: Boolean,
-      default: true
+    linkTo: {
+      type: String,
+      default: null
+    },
+    zRoute: {
+      type: Object,
+      default: null
     }
   });
 
@@ -29,10 +33,14 @@
 </script>
 
 <template>
-  <Link v-if="props.router" :class="classes">
+  <Link
+    v-if="props.zRoute"
+    :class="classes"
+    :href="route(props.zRoute.name, props.zRoute.params, props.zRoute.absolute)"
+  >
     <slot />
   </Link>
-  <a v-else :class="classes">
+  <a v-else :class="classes" :href="props.linkTo">
     <slot />
   </a>
 </template>

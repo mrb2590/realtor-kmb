@@ -36,10 +36,10 @@
 
   const navLinks = {
     about: { ...links.about },
-    contact: { ...links.contact },
-    home: { ...links.home },
     services: { ...links.services },
-    listings: { ...links.listings }
+    home: { ...links.home },
+    listings: { ...links.listings },
+    contact: { ...links.contact }
   };
 
   onMounted(() => {
@@ -69,26 +69,21 @@
           :key="linkName"
         >
           <AppLink
-            v-if="linkName !== 'home'"
-            :href="navLink.href"
-            :router="navLink.router"
-            class="text-center text-base md:text-xl"
+            v-if="linkName === 'home'"
+            :z-route="navLink.zRoute"
+            :link-to="navLink.href"
+            class="mx-6 w-full max-w-32 text-center sm:max-w-48"
           >
-            {{ navLink.title }}
+            <AppLogo class="h-full w-full" />
           </AppLink>
 
           <AppLink
             v-else
-            :href="links.home.href"
-            :router="links.home.router"
-            class="mx-6 w-full max-w-32 text-center sm:max-w-48"
+            :z-route="navLink.zRoute"
+            :link-to="navLink.href"
+            class="text-center text-base md:text-xl"
           >
-            <AppLogo
-              :is="links.home.icon.component"
-              v-if="links.home.icon"
-              class="h-full w-full"
-              :class="links.home.icon.classes"
-            />
+            {{ navLink.title }}
           </AppLink>
         </li>
       </ul>
@@ -139,8 +134,8 @@
             <li class="mb-4 flex flex-col p-2" v-if="linkName !== 'home'">
               <AppLink
                 @click="mobileNavOpen = false"
-                :href="link.href"
-                :router="link.router"
+                :link-to="link.href"
+                :z-route="link.zRoute"
                 class="flex flex-row items-center text-base font-bold !text-primary-900"
               >
                 <span> {{ link.title }} </span>
@@ -154,8 +149,8 @@
                 <li class="flex flex-row p-2">
                   <AppLink
                     @click="mobileNavOpen = false"
-                    :href="subLink.href"
-                    :router="subLink.router"
+                    :link-to="subLink.href"
+                    :z-route="subLink.zRoute"
                     class="flex flex-row items-center space-x-2 text-sm !text-primary-900"
                   >
                     <component
