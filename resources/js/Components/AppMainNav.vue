@@ -36,9 +36,9 @@
   };
 
   const navLinks = {
+    home: { ...links.home },
     about: { ...links.about },
     services: { ...links.services },
-    home: { ...links.home },
     listings: { ...links.listings },
     contact: { ...links.contact }
   };
@@ -59,7 +59,7 @@
     <!-- Desktop Nav -->
     <nav class="mx-auto w-full px-4 py-2 sm:container sm:h-auto sm:py-4">
       <ul
-        class="mx-auto flex h-full w-full max-w-4xl items-center justify-between text-xl font-light uppercase sm:justify-center sm:space-x-6"
+        class="mx-auto flex h-full w-full items-center justify-between text-xl font-light uppercase sm:space-x-6"
       >
         <li
           class="items-center justify-start"
@@ -71,8 +71,8 @@
           :key="linkName"
         >
           <AppLink v-if="linkName === 'home'" :z-route="navLink.zRoute" :link-to="navLink.href">
-            <AppLogo class="hidden h-full w-full max-w-24 sm:block sm:max-w-32 md:max-w-40" />
-            <AppLogoHorz class="h-full w-full max-w-24 sm:hidden sm:max-w-32 md:max-w-40" />
+            <AppLogo class="h-full w-full min-w-24 max-w-24 sm:max-w-32 md:max-w-36" />
+            <!-- <AppLogoHorz class="h-full w-full max-w-24 sm:max-w-32 md:max-w-40" /> -->
           </AppLink>
 
           <AppLink
@@ -126,7 +126,7 @@
       mode="out-in"
     >
       <nav
-        class="absolute inset-0 left-0 top-14 z-30 h-[calc(100vh_-_6rem)] w-screen border-t border-primary-700 bg-white"
+        class="absolute inset-0 left-0 top-[4.5rem] z-30 h-[calc(100vh_-_7.5rem)] w-screen border-t border-primary-700 bg-white"
         v-if="mobileNavOpen"
       >
         <div class="h-full w-full overflow-auto px-4 py-4">
