@@ -78,69 +78,6 @@ const links = {
       }
     }
   },
-  contact: {
-    title: 'Contact',
-    zRoute: {
-      name: 'contact',
-      params: {},
-      absolute: false
-    },
-    href: null,
-    icon: {
-      component: markRaw(UsersIcon),
-      classes: []
-    },
-    subLinks: {
-      messageForm: {
-        title: 'Message Me',
-        zRoute: {
-          name: 'contact',
-          params: {},
-          absolute: false
-        },
-        href: null,
-        icon: {
-          component: markRaw(ChatBubbleLeftIcon),
-          classes: []
-        }
-      },
-      cellPhone: {
-        title: '732-207-8154',
-        zRoute: null,
-        href: 'tel:+17322078154',
-        icon: {
-          component: markRaw(DevicePhoneMobileIcon),
-          classes: []
-        },
-        iconAlt: {
-          component: markRaw(PhoneIcon),
-          classes: []
-        }
-      },
-      officePhone: {
-        title: '904-503-0425',
-        zRoute: null,
-        href: 'tel:+19045030425',
-        icon: {
-          component: markRaw(BuildingOfficeIcon),
-          classes: []
-        },
-        iconAlt: {
-          component: markRaw(PhoneIcon),
-          classes: []
-        }
-      },
-      email: {
-        title: 'karen@realtorkmb.com',
-        zRoute: null,
-        href: 'mailto:karen@realtorkmb.com',
-        icon: {
-          component: markRaw(EnvelopeIcon),
-          classes: []
-        }
-      }
-    }
-  },
   services: {
     title: 'Services',
     zRoute: {
@@ -244,6 +181,69 @@ const links = {
         href: null,
         icon: {
           component: markRaw(MagnifyingGlassIcon),
+          classes: []
+        }
+      }
+    }
+  },
+  contact: {
+    title: 'Contact',
+    zRoute: {
+      name: 'contact',
+      params: {},
+      absolute: false
+    },
+    href: null,
+    icon: {
+      component: markRaw(UsersIcon),
+      classes: []
+    },
+    subLinks: {
+      messageForm: {
+        title: 'Message Me',
+        zRoute: {
+          name: 'contact',
+          params: {},
+          absolute: false
+        },
+        href: null,
+        icon: {
+          component: markRaw(ChatBubbleLeftIcon),
+          classes: []
+        }
+      },
+      cellPhone: {
+        title: '732-207-8154',
+        zRoute: null,
+        href: 'tel:+17322078154',
+        icon: {
+          component: markRaw(DevicePhoneMobileIcon),
+          classes: []
+        },
+        iconAlt: {
+          component: markRaw(PhoneIcon),
+          classes: []
+        }
+      },
+      officePhone: {
+        title: '904-503-0425',
+        zRoute: null,
+        href: 'tel:+19045030425',
+        icon: {
+          component: markRaw(BuildingOfficeIcon),
+          classes: []
+        },
+        iconAlt: {
+          component: markRaw(PhoneIcon),
+          classes: []
+        }
+      },
+      email: {
+        title: 'karen@realtorkmb.com',
+        zRoute: null,
+        href: 'mailto:karen@realtorkmb.com',
+        icon: {
+          component: markRaw(EnvelopeIcon),
           classes: []
         }
       }

@@ -1,7 +1,7 @@
 <script setup>
   import AppLink from '@/Components/AppLink.vue';
   import AppLogo from '@/Components/AppLogo.vue';
-  import SocialLinks from '@/Layouts/Partials/SocialLinks.vue';
+  import SocialLinks from '@/Components/SocialLinks.vue';
   import { links } from '~data/app-links';
 
   const navLinks = {

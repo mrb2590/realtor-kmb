@@ -1,6 +1,6 @@
 <script setup>
   import AppButton from '@/Components/AppButton.vue';
-  import SocialLinks from '@/Layouts/Partials/SocialLinks.vue';
+  import SocialLinks from '@/Components/SocialLinks.vue';
   import { links } from '~data/app-links';
 
   const { cellPhone, officePhone, email } = links.contact.subLinks;
