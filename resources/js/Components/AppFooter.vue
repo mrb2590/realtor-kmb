@@ -13,7 +13,7 @@
 </script>
 
 <template>
-  <footer class="w-full border-primary-700 bg-gray-100">
+  <footer class="w-full border-t border-primary-700 bg-gray-50">
     <!-- Container-->
     <div class="container mx-auto flex flex-row flex-wrap justify-evenly px-4 py-8 md:flex-nowrap">
       <!-- Left Side -->
@@ -65,7 +65,7 @@
           </div>
         </div>
         <div class="flex w-full flex-row flex-wrap items-center justify-center md:justify-end">
-          <SocialLinks />
+          <SocialLinks size="lg" />
         </div>
       </nav>
     </div>

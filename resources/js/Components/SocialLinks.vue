@@ -1,6 +1,17 @@
 <script setup>
   import AppButton from '@/Components/AppButton.vue';
   import { links } from '~data/app-links';
+
+  const props = defineProps({
+    variant: {
+      type: String,
+      default: 'secondary'
+    },
+    size: {
+      type: String,
+      default: 'sm'
+    }
+  });
 </script>
 
 <template>
@@ -12,10 +23,11 @@
     >
       <AppButton
         :z-route="link.route"
-        :href="link.href"
+        :link-to="link.href"
         :title="link.title"
-        variant="secondary"
-        class="!p-1"
+        :variant="props.variant"
+        :size="props.size"
+        square
       >
         <component :is="link.icon.component" v-if="link.icon" :class="link.icon.classes" />
       </AppButton>

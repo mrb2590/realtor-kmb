@@ -8,11 +8,12 @@
 </script>
 
 <template>
-  <nav class="z-20 h-12 w-full bg-white text-sm font-light">
+  <nav class="z-20 h-12 w-full border-primary-700 bg-white text-sm font-light">
     <div
       class="mx-auto flex h-full w-full flex-row items-center justify-between space-x-6 px-4 py-2 sm:container"
     >
-      <SocialLinks />
+      <SocialLinks size="xs" />
+
       <ul class="flex w-full items-center justify-end space-x-3">
         <li
           class="flex-row items-center space-x-2"
@@ -21,10 +22,12 @@
         >
           <AppButton
             :z-route="link.zRoute"
-            :href="link.href"
+            :link-to="link.href"
             :title="link.title"
             variant="secondary"
-            class="flex flex-row items-center rounded-full bg-white !p-1 md:rounded md:border-transparent md:!text-xs"
+            size="xs"
+            square
+            class="flex flex-row items-center md:border-transparent md:bg-transparent md:hover:bg-transparent md:active:bg-transparent"
           >
             <component
               v-if="linkName === 'cellPhone2' ? link.iconAlt : link.icon"
