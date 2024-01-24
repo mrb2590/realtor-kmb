@@ -3,9 +3,9 @@
   import { onMounted, onUnmounted, ref, watch } from 'vue';
 
   import tailwindConfig from '@/../../tailwind.config.js';
-  import ApplicationLogo from '@/Components/ApplicationLogo.vue';
+  import AppButton from '@/Components/AppButton.vue';
   import AppLink from '@/Components/AppLink.vue';
-  import SecondaryButton from '@/Components/SecondaryButton.vue';
+  import AppLogo from '@/Components/AppLogo.vue';
   import { links } from '~data/app-links';
   import BarsIcon from '~icons/heroicons-outline/bars-3';
   import XMarkIcon from '~icons/heroicons-outline/x-mark';
@@ -83,7 +83,7 @@
             :router="links.home.router"
             class="mx-6 w-full max-w-32 text-center sm:max-w-48"
           >
-            <ApplicationLogo
+            <AppLogo
               :is="links.home.icon.component"
               v-if="links.home.icon"
               class="h-full w-full"
@@ -96,8 +96,9 @@
 
     <!-- Mobile Nav toggle -->
     <div class="absolute bottom-4 right-4 z-40 sm:hidden">
-      <SecondaryButton
-        class="border-0 !px-2 py-2 !shadow-none"
+      <AppButton
+        class="border-0 !px-2 py-2"
+        variant="secondary"
         type="button"
         @click="toggleMobileNav"
       >
@@ -115,7 +116,7 @@
           <XMarkIcon class="h-6 w-6 text-primary-700" v-if="mobileNavOpen" />
           <BarsIcon class="h-6 w-6 text-primary-700" v-else />
         </Transition>
-      </SecondaryButton>
+      </AppButton>
     </div>
 
     <!-- Mobile Nav -->

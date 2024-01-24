@@ -2,12 +2,11 @@
   import { useForm } from '@inertiajs/vue3';
   import { nextTick, ref } from 'vue';
 
-  import DangerButton from '@/Components/DangerButton.vue';
-  import InputError from '@/Components/InputError.vue';
-  import InputLabel from '@/Components/InputLabel.vue';
+  import AppButton from '@/Components/AppButton.vue';
+  import FormError from '@/Components/FormError.vue';
+  import FormInput from '@/Components/FormInput.vue';
+  import FormLabel from '@/Components/FormLabel.vue';
   import Modal from '@/Components/Modal.vue';
-  import SecondaryButton from '@/Components/SecondaryButton.vue';
-  import TextInput from '@/Components/TextInput.vue';
 
   const confirmingUserDeletion = ref(false);
   const passwordInput = ref(null);
@@ -50,7 +49,7 @@
       </p>
     </header>
 
-    <DangerButton @click="confirmUserDeletion">Delete Account</DangerButton>
+    <AppButton @click="confirmUserDeletion">Delete Account</AppButton>
 
     <Modal :show="confirmingUserDeletion" @close="closeModal">
       <div class="p-6">
@@ -64,9 +63,9 @@
         </p>
 
         <div class="mt-6">
-          <InputLabel for="password" value="Password" class="sr-only" />
+          <FormLabel for="password" value="Password" class="sr-only" />
 
-          <TextInput
+          <FormInput
             id="password"
             ref="passwordInput"
             v-model="form.password"
@@ -76,20 +75,21 @@
             @keyup.enter="deleteUser"
           />
 
-          <InputError :message="form.errors.password" class="mt-2" />
+          <FormError :message="form.errors.password" class="mt-2" />
         </div>
 
         <div class="mt-6 flex justify-end">
-          <SecondaryButton @click="closeModal"> Cancel </SecondaryButton>
+          <AppButton @click="closeModal" variant="secondary" type="button"> Cancel </AppButton>
 
-          <DangerButton
+          <AppButton
             class="ms-3"
-            :class="{ 'opacity-25': form.processing }"
-            :disabled="form.processing"
+            :processing="form.processing"
+            variant="danger"
+            type="button"
             @click="deleteUser"
           >
             Delete Account
-          </DangerButton>
+          </AppButton>
         </div>
       </div>
     </Modal>

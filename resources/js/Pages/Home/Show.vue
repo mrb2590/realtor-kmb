@@ -1,13 +1,13 @@
 <script setup>
   import { useForm } from '@inertiajs/vue3';
 
+  import AppButton from '@/Components/AppButton.vue';
   import AppHead from '@/Components/AppHead.vue';
-  import ApplicationLogo from '@/Components/ApplicationLogo.vue';
+  import AppLogo from '@/Components/AppLogo.vue';
+  import FormError from '@/Components/FormError.vue';
+  import FormInput from '@/Components/FormInput.vue';
+  import FormLabel from '@/Components/FormLabel.vue';
   import FormSelect from '@/Components/FormSelect.vue';
-  import InputError from '@/Components/InputError.vue';
-  import InputLabel from '@/Components/InputLabel.vue';
-  import PrimaryButton from '@/Components/PrimaryButton.vue';
-  import TextInput from '@/Components/TextInput.vue';
   import HomeLayout from '@/Layouts/HomeLayout.vue';
   import ChevronDownIcon from '~icons/heroicons-outline/chevron-down';
   import AwardImg from '~img/home/award.png';
@@ -40,9 +40,9 @@
         class="z-10 mt-6 w-full max-w-4xl space-y-6 rounded bg-black/50 p-8 shadow-lg"
       >
         <div>
-          <InputLabel for="address" value="Address" class="text-xl !font-light text-white" />
+          <FormLabel for="address" value="Address" class="text-xl !font-light text-white" />
 
-          <TextInput
+          <FormInput
             id="address"
             v-model="form.address"
             type="text"
@@ -50,12 +50,12 @@
             placeholder="123 My Dream Home Ave, Jacksonville, FL"
           />
 
-          <InputError :message="form.errors.address" class="mt-2" />
+          <FormError :message="form.errors.address" class="mt-2" />
         </div>
 
         <div class="flex space-x-6">
           <div class="grow">
-            <InputLabel for="price_min" value="Min Price" class="text-xl !font-light text-white" />
+            <FormLabel for="price_min" value="Min Price" class="text-xl !font-light text-white" />
 
             <FormSelect
               id="price_min"
@@ -85,11 +85,11 @@
               ]"
             />
 
-            <InputError :message="form.errors.price_min" class="mt-2" />
+            <FormError :message="form.errors.price_min" class="mt-2" />
           </div>
 
           <div class="grow">
-            <InputLabel for="price_max" value="Max Price" class="text-xl !font-light text-white" />
+            <FormLabel for="price_max" value="Max Price" class="text-xl !font-light text-white" />
 
             <FormSelect
               id="price_max"
@@ -151,11 +151,11 @@
               ]"
             />
 
-            <InputError :message="form.errors.price_max" class="mt-2" />
+            <FormError :message="form.errors.price_max" class="mt-2" />
           </div>
 
           <div class="grow">
-            <InputLabel for="beds" value="Beds" class="text-xl !font-light text-white" />
+            <FormLabel for="beds" value="Beds" class="text-xl !font-light text-white" />
 
             <FormSelect
               id="beds"
@@ -170,11 +170,11 @@
               ]"
             />
 
-            <InputError :message="form.errors.beds" class="mt-2" />
+            <FormError :message="form.errors.beds" class="mt-2" />
           </div>
 
           <div class="grow">
-            <InputLabel for="baths" value="Baths" class="text-xl !font-light text-white" />
+            <FormLabel for="baths" value="Baths" class="text-xl !font-light text-white" />
 
             <FormSelect
               id="baths"
@@ -189,12 +189,12 @@
               ]"
             />
 
-            <InputError :message="form.errors.baths" class="mt-2" />
+            <FormError :message="form.errors.baths" class="mt-2" />
           </div>
         </div>
 
         <div class="flex justify-end">
-          <PrimaryButton type="submit" class="mt-4"> Search </PrimaryButton>
+          <AppButton type="submit" class="mt-4" variant="primary"> Search </AppButton>
         </div>
       </form>
     </div>
@@ -309,7 +309,7 @@
           mode="out-in"
         >
           <div>
-            <ApplicationLogo class="block h-full w-auto fill-current" />
+            <AppLogo class="block h-full w-auto fill-current" />
           </div>
         </Transition>
       </div>

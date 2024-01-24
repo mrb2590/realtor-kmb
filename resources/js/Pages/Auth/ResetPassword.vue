@@ -1,10 +1,10 @@
 <script setup>
   import { Head, useForm } from '@inertiajs/vue3';
 
-  import InputError from '@/Components/InputError.vue';
-  import InputLabel from '@/Components/InputLabel.vue';
-  import PrimaryButton from '@/Components/PrimaryButton.vue';
-  import TextInput from '@/Components/TextInput.vue';
+  import AppButton from '@/Components/AppButton.vue';
+  import FormError from '@/Components/FormError.vue';
+  import FormInput from '@/Components/FormInput.vue';
+  import FormLabel from '@/Components/FormLabel.vue';
   import GuestLayout from '@/Layouts/GuestLayout.vue';
 
   const props = defineProps({
@@ -38,9 +38,9 @@
 
     <form @submit.prevent="submit">
       <div>
-        <InputLabel for="email" value="Email" />
+        <FormLabel for="email" value="Email" />
 
-        <TextInput
+        <FormInput
           id="email"
           type="email"
           class="mt-1 block w-full"
@@ -50,13 +50,13 @@
           autocomplete="username"
         />
 
-        <InputError class="mt-2" :message="form.errors.email" />
+        <FormError class="mt-2" :message="form.errors.email" />
       </div>
 
       <div class="mt-4">
-        <InputLabel for="password" value="Password" />
+        <FormLabel for="password" value="Password" />
 
-        <TextInput
+        <FormInput
           id="password"
           type="password"
           class="mt-1 block w-full"
@@ -65,13 +65,13 @@
           autocomplete="new-password"
         />
 
-        <InputError class="mt-2" :message="form.errors.password" />
+        <FormError class="mt-2" :message="form.errors.password" />
       </div>
 
       <div class="mt-4">
-        <InputLabel for="password_confirmation" value="Confirm Password" />
+        <FormLabel for="password_confirmation" value="Confirm Password" />
 
-        <TextInput
+        <FormInput
           id="password_confirmation"
           type="password"
           class="mt-1 block w-full"
@@ -80,13 +80,13 @@
           autocomplete="new-password"
         />
 
-        <InputError class="mt-2" :message="form.errors.password_confirmation" />
+        <FormError class="mt-2" :message="form.errors.password_confirmation" />
       </div>
 
       <div class="mt-4 flex items-center justify-end">
-        <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+        <AppButton :processing="form.processing" variant="primary" type="submit">
           Reset Password
-        </PrimaryButton>
+        </AppButton>
       </div>
     </form>
   </GuestLayout>

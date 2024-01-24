@@ -2,7 +2,7 @@
   import { computed } from 'vue';
 
   import AppHead from '@/Components/AppHead.vue';
-  import ApplicationLogo from '@/Components/ApplicationLogo.vue';
+  import AppLogo from '@/Components/AppLogo.vue';
 
   const props = defineProps({
     status: {
@@ -53,7 +53,7 @@
   >
     <div class="flex h-screen w-full flex-col items-center justify-center p-6">
       <AppHead :title="`${props.status} ${title}`" :description="description" />
-      <ApplicationLogo class="mb-4 w-full max-w-60" />
+      <AppLogo class="mb-4 w-full max-w-60" />
       <h1 class="mb-4 text-center text-2xl">
         <strong>{{ props.status }}</strong> <br />
         {{ title }}

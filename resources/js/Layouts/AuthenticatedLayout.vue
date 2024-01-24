@@ -1,7 +1,7 @@
 <script setup>
   import { ref } from 'vue';
 
-  import ApplicationIcon from '@/Components/ApplicationIcon.vue';
+  import AppIcon from '@/Components/AppIcon.vue';
   import AppLink from '@/Components/AppLink.vue';
   import Dropdown from '@/Components/Dropdown.vue';
   import DropdownLink from '@/Components/DropdownLink.vue';
@@ -22,7 +22,7 @@
               <!-- Logo -->
               <div class="flex shrink-0 items-center">
                 <AppLink :href="route('dashboard')">
-                  <ApplicationIcon class="block h-9 w-auto fill-current" />
+                  <AppIcon class="block h-9 w-auto fill-current" />
                 </AppLink>
               </div>
 

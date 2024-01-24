@@ -1,6 +1,6 @@
 <script setup>
-  import ApplicationLogo from '@/Components/ApplicationLogo.vue';
   import AppLink from '@/Components/AppLink.vue';
+  import AppLogo from '@/Components/AppLogo.vue';
   import SocialLinks from '@/Layouts/Partials/SocialLinks.vue';
   import { links } from '~data/app-links';
 
@@ -22,7 +22,7 @@
       >
         <!-- Logo Wrapper -->
         <div class="flex w-full flex-col items-center justify-center space-y-2">
-          <ApplicationLogo class="mb-4 h-auto w-full max-w-52" />
+          <AppLogo class="mb-4 h-auto w-full max-w-52" />
 
           <div class="text-center text-xs text-gray-600">
             &copy; {{ new Date().getFullYear() }} Karen Buonomo, realtorkmb.com. All rights

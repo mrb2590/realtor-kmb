@@ -2,10 +2,10 @@
   import { useForm } from '@inertiajs/vue3';
   import { ref } from 'vue';
 
-  import InputError from '@/Components/InputError.vue';
-  import InputLabel from '@/Components/InputLabel.vue';
-  import PrimaryButton from '@/Components/PrimaryButton.vue';
-  import TextInput from '@/Components/TextInput.vue';
+  import AppButton from '@/Components/AppButton.vue';
+  import FormError from '@/Components/FormError.vue';
+  import FormInput from '@/Components/FormInput.vue';
+  import FormLabel from '@/Components/FormLabel.vue';
 
   const passwordInput = ref(null);
   const currentPasswordInput = ref(null);
@@ -46,9 +46,9 @@
 
     <form @submit.prevent="updatePassword" class="mt-6 space-y-6">
       <div>
-        <InputLabel for="current_password" value="Current Password" />
+        <FormLabel for="current_password" value="Current Password" />
 
-        <TextInput
+        <FormInput
           id="current_password"
           ref="currentPasswordInput"
           v-model="form.current_password"
@@ -57,13 +57,13 @@
           autocomplete="current-password"
         />
 
-        <InputError :message="form.errors.current_password" class="mt-2" />
+        <FormError :message="form.errors.current_password" class="mt-2" />
       </div>
 
       <div>
-        <InputLabel for="password" value="New Password" />
+        <FormLabel for="password" value="New Password" />
 
-        <TextInput
+        <FormInput
           id="password"
           ref="passwordInput"
           v-model="form.password"
@@ -72,13 +72,13 @@
           autocomplete="new-password"
         />
 
-        <InputError :message="form.errors.password" class="mt-2" />
+        <FormError :message="form.errors.password" class="mt-2" />
       </div>
 
       <div>
-        <InputLabel for="password_confirmation" value="Confirm Password" />
+        <FormLabel for="password_confirmation" value="Confirm Password" />
 
-        <TextInput
+        <FormInput
           id="password_confirmation"
           v-model="form.password_confirmation"
           type="password"
@@ -86,11 +86,11 @@
           autocomplete="new-password"
         />
 
-        <InputError :message="form.errors.password_confirmation" class="mt-2" />
+        <FormError :message="form.errors.password_confirmation" class="mt-2" />
       </div>
 
       <div class="flex items-center gap-4">
-        <PrimaryButton :disabled="form.processing">Save</PrimaryButton>
+        <AppButton :processing="form.processing" variant="primary" type="submit">Save</AppButton>
 
         <Transition
           enter-active-class="transition ease-in-out"

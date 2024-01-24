@@ -1,6 +1,6 @@
 <script setup>
-  import ApplicationLogo from '@/Components/ApplicationLogo.vue';
   import AppLink from '@/Components/AppLink.vue';
+  import AppLogo from '@/Components/AppLogo.vue';
 </script>
 
 <template>
@@ -9,7 +9,7 @@
   >
     <div>
       <AppLink href="/">
-        <ApplicationLogo class="h-52 w-52" />
+        <AppLogo class="h-52 w-52" />
       </AppLink>
     </div>
 

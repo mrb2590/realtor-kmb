@@ -2,8 +2,8 @@
   import { Head, useForm } from '@inertiajs/vue3';
   import { computed } from 'vue';
 
+  import AppButton from '@/Components/AppButton.vue';
   import AppLink from '@/Components/AppLink.vue';
-  import PrimaryButton from '@/Components/PrimaryButton.vue';
   import GuestLayout from '@/Layouts/GuestLayout.vue';
 
   const props = defineProps({
@@ -40,9 +40,9 @@
 
     <form @submit.prevent="submit">
       <div class="mt-4 flex items-center justify-between">
-        <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+        <AppButton :processing="form.processing" variant="primary" type="submit">
           Resend Verification Email
-        </PrimaryButton>
+        </AppButton>
 
         <AppLink :href="route('logout')" method="post" as="button" class="underline">
           Log Out
