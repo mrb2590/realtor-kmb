@@ -74,7 +74,9 @@
             <AppLogo
               class="hidden h-full w-full min-w-24 max-w-24 sm:block sm:max-w-32 md:max-w-36"
             />
-            <AppLogoHorz class="h-full w-full max-w-40 sm:hidden sm:max-w-32 md:max-w-40" />
+            <AppLogoHorz
+              class="h-full w-full min-w-44 max-w-44 sm:hidden sm:max-w-32 md:max-w-40"
+            />
           </AppLink>
 
           <AppLink
