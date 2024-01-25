@@ -20,6 +20,7 @@ import InstagramIcon from '~icons/logos/instagram-icon';
 import LinkedInIcon from '~icons/logos/linkedin-icon';
 import TikTokIcon from '~icons/logos/tiktok-icon';
 import YouTubeIcon from '~icons/logos/youtube-icon';
+import XIcon from '~icons/ri/twitter-x-line';
 
 export { links };
 
@@ -296,6 +297,15 @@ const links = {
         href: '#',
         icon: {
           component: markRaw(YouTubeIcon),
+          classes: []
+        }
+      },
+      x: {
+        title: 'X',
+        zRoute: null,
+        href: '#',
+        icon: {
+          component: markRaw(XIcon),
           classes: []
         }
       }
