@@ -71,8 +71,10 @@
           :key="linkName"
         >
           <AppLink v-if="linkName === 'home'" :z-route="navLink.zRoute" :link-to="navLink.href">
-            <AppLogo class="h-full w-full min-w-24 max-w-24 sm:max-w-32 md:max-w-36" />
-            <!-- <AppLogoHorz class="h-full w-full max-w-24 sm:max-w-32 md:max-w-40" /> -->
+            <AppLogo
+              class="hidden h-full w-full min-w-24 max-w-24 sm:block sm:max-w-32 md:max-w-36"
+            />
+            <AppLogoHorz class="h-full w-full max-w-40 sm:hidden sm:max-w-32 md:max-w-40" />
           </AppLink>
 
           <AppLink
