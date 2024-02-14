@@ -63,8 +63,8 @@ export default {
         'text-default': customColors['black-pearl'][900]
       },
       fontFamily: {
-        body: ['Figtree', 'system-ui', 'sans-serif'],
-        display: ['Source Serif Pro', 'Georgia', 'serif']
+        body: ['Nunito', 'system-ui', 'sans-serif'],
+        display: ['Nunito', 'Georgia', 'serif']
       },
       screens: {
         xs: '425px'

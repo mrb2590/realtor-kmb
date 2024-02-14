@@ -1,6 +1,6 @@
 <script setup>
-  import ApplicationLogo from '@/Components/ApplicationLogo.vue';
   import AppLink from '@/Components/AppLink.vue';
+  import AppLogo from '@/Components/AppLogo.vue';
 </script>
 
 <template>
@@ -8,8 +8,8 @@
     class="flex min-h-screen flex-col items-center bg-gray-100 pt-6 dark:bg-gray-900 sm:justify-center sm:pt-0"
   >
     <div>
-      <AppLink href="/">
-        <ApplicationLogo class="h-52 w-52" />
+      <AppLink :z-route="route('home')">
+        <AppLogo class="h-52 w-52" />
       </AppLink>
     </div>
 

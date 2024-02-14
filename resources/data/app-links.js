@@ -1,10 +1,5 @@
 import { markRaw } from 'vue';
-import route from 'ziggy-js';
 
-import { Ziggy } from '@/ziggy.js';
-import FacebookIcon from '~icons/fa6-brands/facebook';
-import InstagramIcon from '~icons/fa6-brands/instagram';
-import LinkedInIcon from '~icons/fa6-brands/linkedin';
 import BuildingOfficeIcon from '~icons/heroicons-outline/building-office';
 import ChatBubbleLeftIcon from '~icons/heroicons-outline/chat-bubble-left';
 import ClockIcon from '~icons/heroicons-outline/clock';
@@ -19,14 +14,25 @@ import ShoppingCartIcon from '~icons/heroicons-outline/shopping-cart';
 import TagIcon from '~icons/heroicons-outline/tag';
 import UserGroupIcon from '~icons/heroicons-outline/user-group';
 import UsersIcon from '~icons/heroicons-outline/users';
+import StarSolidIcon from '~icons/heroicons-solid/star';
+import FacebookIcon from '~icons/logos/facebook';
+import InstagramIcon from '~icons/logos/instagram-icon';
+import LinkedInIcon from '~icons/logos/linkedin-icon';
+import TikTokIcon from '~icons/logos/tiktok-icon';
+import YouTubeIcon from '~icons/logos/youtube-icon';
+import XIcon from '~icons/ri/twitter-x-line';
 
 export { links };
 
 const links = {
   home: {
     title: 'Home',
-    href: route('home', undefined, undefined, Ziggy),
-    router: true,
+    zRoute: {
+      name: 'home',
+      params: {},
+      absolute: false
+    },
+    href: null,
     icon: {
       component: markRaw(HomeIcon),
       classes: []
@@ -34,8 +40,12 @@ const links = {
   },
   about: {
     title: 'About',
-    href: route('about', undefined, undefined, Ziggy),
-    router: true,
+    zRoute: {
+      name: 'about',
+      params: {},
+      absolute: false
+    },
+    href: null,
     icon: {
       component: markRaw(InformationCircleIcon),
       classes: []
@@ -43,8 +53,12 @@ const links = {
     subLinks: {
       aboutUs: {
         title: 'About Us',
-        href: route('about', undefined, undefined, Ziggy),
-        router: true,
+        zRoute: {
+          name: 'about',
+          params: {},
+          absolute: false
+        },
+        href: null,
         icon: {
           component: markRaw(InformationCircleIcon),
           classes: []
@@ -52,8 +66,12 @@ const links = {
       },
       meetTheTeam: {
         title: 'Meet the Team',
-        href: route('about', undefined, undefined, Ziggy),
-        router: true,
+        zRoute: {
+          name: 'about',
+          params: {},
+          absolute: false
+        },
+        href: null,
         icon: {
           component: markRaw(UserGroupIcon),
           classes: []
@@ -61,10 +79,122 @@ const links = {
       }
     }
   },
+  services: {
+    title: 'Services',
+    zRoute: {
+      name: 'services',
+      params: {},
+      absolute: false
+    },
+    href: null,
+    icon: {
+      component: markRaw(InformationCircleIcon),
+      classes: []
+    },
+    subLinks: {
+      homeBuying: {
+        title: 'Buying Your Home',
+        zRoute: {
+          name: 'services',
+          params: {},
+          absolute: false
+        },
+        href: null,
+        icon: {
+          component: markRaw(ShoppingCartIcon),
+          classes: []
+        }
+      },
+      homeSelling: {
+        title: 'Selling Your Home',
+        zRoute: {
+          name: 'services',
+          params: {},
+          absolute: false
+        },
+        href: null,
+        icon: {
+          component: markRaw(TagIcon),
+          classes: []
+        }
+      },
+      homeStaging: {
+        title: 'Home Staging',
+        zRoute: {
+          name: 'services',
+          params: {},
+          absolute: false
+        },
+        href: null,
+        icon: {
+          component: markRaw(HomeModernIcon),
+          classes: []
+        }
+      },
+      expiredListings: {
+        title: 'Expired Listings',
+        zRoute: {
+          name: 'services',
+          params: {},
+          absolute: false
+        },
+        href: null,
+        icon: {
+          component: markRaw(ClockIcon),
+          classes: []
+        }
+      }
+    }
+  },
+  listings: {
+    title: 'Listings',
+    zRoute: {
+      name: 'listings',
+      params: {},
+      absolute: false
+    },
+    href: null,
+    icon: {
+      component: markRaw(UsersIcon),
+      classes: []
+    },
+    subLinks: {
+      featured: {
+        title: 'Featured Listings',
+        zRoute: {
+          name: 'listings',
+          params: {},
+          absolute: false
+        },
+        href: null,
+        icon: {
+          component: markRaw(StarSolidIcon),
+          classes: []
+        }
+      },
+      search: {
+        title: 'Search any Listing',
+        zRoute: {
+          name: 'listings',
+          params: {},
+          absolute: false
+        },
+        href: null,
+        icon: {
+          component: markRaw(MagnifyingGlassIcon),
+          classes: []
+        }
+      }
+    }
+  },
   contact: {
     title: 'Contact',
-    href: route('contact', undefined, undefined, Ziggy),
-    router: true,
+    zRoute: {
+      name: 'contact',
+      params: {},
+      absolute: false
+    },
+    href: null,
     icon: {
       component: markRaw(UsersIcon),
       classes: []
@@ -72,8 +202,12 @@ const links = {
     subLinks: {
       messageForm: {
         title: 'Message Me',
-        href: route('contact', undefined, undefined, Ziggy),
-        router: true,
+        zRoute: {
+          name: 'contact',
+          params: {},
+          absolute: false
+        },
+        href: null,
         icon: {
           component: markRaw(ChatBubbleLeftIcon),
           classes: []
@@ -81,8 +215,8 @@ const links = {
       },
       cellPhone: {
         title: '732-207-8154',
+        zRoute: null,
         href: 'tel:+17322078154',
-        router: false,
         icon: {
           component: markRaw(DevicePhoneMobileIcon),
           classes: []
@@ -94,8 +228,8 @@ const links = {
       },
       officePhone: {
         title: '904-503-0425',
+        zRoute: null,
         href: 'tel:+19045030425',
-        router: false,
         icon: {
           component: markRaw(BuildingOfficeIcon),
           classes: []
@@ -107,77 +241,10 @@ const links = {
       },
       email: {
         title: 'karen@realtorkmb.com',
+        zRoute: null,
         href: 'mailto:karen@realtorkmb.com',
-        router: false,
         icon: {
           component: markRaw(EnvelopeIcon),
-          classes: []
-        }
-      }
-    }
-  },
-  services: {
-    title: 'Services',
-    href: route('services', undefined, undefined, Ziggy),
-    router: true,
-    icon: {
-      component: markRaw(InformationCircleIcon),
-      classes: []
-    },
-    subLinks: {
-      homeBuying: {
-        title: 'Buying Your Home',
-        href: route('services', undefined, undefined, Ziggy),
-        router: true,
-        icon: {
-          component: markRaw(ShoppingCartIcon),
-          classes: []
-        }
-      },
-      homeSelling: {
-        title: 'Selling Your Home',
-        href: route('services', undefined, undefined, Ziggy),
-        router: true,
-        icon: {
-          component: markRaw(TagIcon),
-          classes: []
-        }
-      },
-      homeStaging: {
-        title: 'Home Staging',
-        href: route('services', undefined, undefined, Ziggy),
-        router: true,
-        icon: {
-          component: markRaw(HomeModernIcon),
-          classes: []
-        }
-      },
-      expiredListings: {
-        title: 'Expired Listings',
-        href: route('services', undefined, undefined, Ziggy),
-        router: true,
-        icon: {
-          component: markRaw(ClockIcon),
-          classes: []
-        }
-      }
-    }
-  },
-  listing: {
-    title: 'Listings',
-    href: route('listing', undefined, undefined, Ziggy),
-    router: true,
-    icon: {
-      component: markRaw(UsersIcon),
-      classes: []
-    },
-    subLinks: {
-      listingForm: {
-        title: 'Find your Dream Home',
-        href: route('listing', undefined, undefined, Ziggy),
-        router: true,
-        icon: {
-          component: markRaw(MagnifyingGlassIcon),
           classes: []
         }
       }
@@ -186,13 +253,12 @@ const links = {
   social: {
     title: 'Social Media',
     href: '#',
-    router: false,
     icon: null,
     subLinks: {
       linkedin: {
         title: 'LinkedIn',
-        href: route('dashboard', undefined, undefined, Ziggy),
-        router: false,
+        zRoute: null,
+        href: '#',
         icon: {
           component: markRaw(LinkedInIcon),
           classes: []
@@ -200,8 +266,8 @@ const links = {
       },
       facebook: {
         title: 'Facebook',
-        href: route('dashboard', undefined, undefined, Ziggy),
-        router: false,
+        zRoute: null,
+        href: '#',
         icon: {
           component: markRaw(FacebookIcon),
           classes: []
@@ -209,13 +275,60 @@ const links = {
       },
       instagram: {
         title: 'Instagram',
-        href: route('dashboard', undefined, undefined, Ziggy),
-        router: false,
+        zRoute: null,
+        href: '#',
         icon: {
           component: markRaw(InstagramIcon),
           classes: []
         }
+      },
+      tiktok: {
+        title: 'TikTok',
+        zRoute: null,
+        href: '#',
+        icon: {
+          component: markRaw(TikTokIcon),
+          classes: []
+        }
+      },
+      youtube: {
+        title: 'YouTube',
+        zRoute: null,
+        href: '#',
+        icon: {
+          component: markRaw(YouTubeIcon),
+          classes: []
+        }
+      },
+      x: {
+        title: 'X',
+        zRoute: null,
+        href: '#',
+        icon: {
+          component: markRaw(XIcon),
+          classes: []
+        }
       }
     }
+  },
+  privacyPolicy: {
+    title: 'Privacy Policy',
+    zRoute: {
+      name: 'privacy-policy',
+      params: {},
+      absolute: false
+    },
+    href: null,
+    icon: null
+  },
+  termsConditions: {
+    title: 'Terms & Conditions',
+    zRoute: {
+      name: 'terms-conditions',
+      params: {},
+      absolute: false
+    },
+    href: null,
+    icon: null
   }
 };

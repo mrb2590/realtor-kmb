@@ -1,7 +1,7 @@
 <script setup>
-  import AppFooter from '@/Layouts/Partials/AppFooter.vue';
-  import AppMainNav from '@/Layouts/Partials/AppMainNav.vue';
-  import AppTopNav from '@/Layouts/Partials/AppTopNav.vue';
+  import AppFooter from '@/Components/AppFooter.vue';
+  import AppMainNav from '@/Components/AppMainNav.vue';
+  import AppTopNav from '@/Components/AppTopNav.vue';
 </script>
 
 <template>

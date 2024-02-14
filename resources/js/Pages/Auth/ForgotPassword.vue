@@ -1,10 +1,10 @@
 <script setup>
   import { Head, useForm } from '@inertiajs/vue3';
 
-  import InputError from '@/Components/InputError.vue';
-  import InputLabel from '@/Components/InputLabel.vue';
-  import PrimaryButton from '@/Components/PrimaryButton.vue';
-  import TextInput from '@/Components/TextInput.vue';
+  import AppButton from '@/Components/AppButton.vue';
+  import FormError from '@/Components/FormError.vue';
+  import FormInput from '@/Components/FormInput.vue';
+  import FormLabel from '@/Components/FormLabel.vue';
   import GuestLayout from '@/Layouts/GuestLayout.vue';
 
   defineProps({
@@ -37,9 +37,9 @@
 
     <form @submit.prevent="submit">
       <div>
-        <InputLabel for="email" value="Email" />
+        <FormLabel for="email" value="Email" />
 
-        <TextInput
+        <FormInput
           id="email"
           type="email"
           class="mt-1 block w-full"
@@ -49,13 +49,17 @@
           autocomplete="username"
         />
 
-        <InputError class="mt-2" :message="form.errors.email" />
+        <FormError class="mt-2" :message="form.errors.email" />
       </div>
 
       <div class="mt-4 flex items-center justify-end">
-        <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+        <AppButton
+          :class="{ 'opacity-25': form.processing }"
+          :disabled="form.processing"
+          variant="primary"
+        >
           Email Password Reset Link
-        </PrimaryButton>
+        </AppButton>
       </div>
     </form>
   </GuestLayout>

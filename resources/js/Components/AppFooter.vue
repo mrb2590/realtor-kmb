@@ -1,19 +1,19 @@
 <script setup>
-  import { links } from '@/../data/app-links';
-  import ApplicationLogo from '@/Components/ApplicationLogo.vue';
   import AppLink from '@/Components/AppLink.vue';
+  import AppLogo from '@/Components/AppLogo.vue';
+  import SocialLinks from '@/Components/SocialLinks.vue';
+  import { links } from '~data/app-links';
 
   const navLinks = {
     about: { ...links.about },
-    contact: { ...links.contact },
     services: { ...links.services },
-    listing: { ...links.listing },
-    social: { ...links.social }
+    listings: { ...links.listings },
+    contact: { ...links.contact }
   };
 </script>
 
 <template>
-  <footer class="w-full border-primary-700 bg-gray-100">
+  <footer class="w-full border-t border-primary-700 bg-gray-50">
     <!-- Container-->
     <div class="container mx-auto flex flex-row flex-wrap justify-evenly px-4 py-8 md:flex-nowrap">
       <!-- Left Side -->
@@ -22,7 +22,7 @@
       >
         <!-- Logo Wrapper -->
         <div class="flex w-full flex-col items-center justify-center space-y-2">
-          <ApplicationLogo class="mb-4 h-auto w-full max-w-52" />
+          <AppLogo class="mb-4 h-auto w-full max-w-52" />
 
           <div class="text-center text-xs text-gray-600">
             &copy; {{ new Date().getFullYear() }} Karen Buonomo, realtorkmb.com. All rights
@@ -30,15 +30,19 @@
           </div>
 
           <div class="text-center text-gray-600">
-            <AppLink href="#" class="mr-2 text-xs"> Privacy Policy </AppLink>
-            <AppLink href="#" class="text-xs"> Terms & Conditions </AppLink>
+            <AppLink :z-route="links.privacyPolicy.zRoute" class="mr-2 text-xs">
+              {{ links.privacyPolicy.title }}
+            </AppLink>
+            <AppLink :z-route="links.termsConditions.zRoute" class="text-xs">
+              {{ links.termsConditions.title }}
+            </AppLink>
           </div>
         </div>
       </div>
 
       <!-- Right Side -->
       <nav
-        class="items-cemter order-first flex basis-full items-center justify-center md:order-last md:basis-3/5 lg:basis-5/6"
+        class="items-cemter order-first flex basis-full flex-col items-center justify-center space-y-6 md:order-last md:basis-3/5 lg:basis-5/6"
       >
         <div
           class="flex w-full max-w-[30rem] flex-row flex-wrap items-start justify-between lg:max-w-full"
@@ -53,12 +57,15 @@
                 :key="`${linkName}-${subLinkName}`"
               >
                 <component :is="link.icon.component" v-if="link.icon" :class="link.icon.classes" />
-                <AppLink :href="link.href" :router="link.router">
+                <AppLink :z-route="link.zroute" :link-to="link.href">
                   {{ link.title }}
                 </AppLink>
               </li>
             </ul>
           </div>
+        </div>
+        <div class="flex w-full flex-row flex-wrap items-center justify-center md:justify-end">
+          <SocialLinks size="lg" />
         </div>
       </nav>
     </div>

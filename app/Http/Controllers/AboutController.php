@@ -12,6 +12,6 @@ class AboutController extends Controller
      */
     public function show(): Response
     {
-        return Inertia::render('About/Show');
+        return Inertia::render('About');
     }
 }

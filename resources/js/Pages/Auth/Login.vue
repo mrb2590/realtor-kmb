@@ -1,12 +1,12 @@
 <script setup>
   import { Head, useForm } from '@inertiajs/vue3';
 
+  import AppButton from '@/Components/AppButton.vue';
   import AppLink from '@/Components/AppLink.vue';
-  import Checkbox from '@/Components/Checkbox.vue';
-  import InputError from '@/Components/InputError.vue';
-  import InputLabel from '@/Components/InputLabel.vue';
-  import PrimaryButton from '@/Components/PrimaryButton.vue';
-  import TextInput from '@/Components/TextInput.vue';
+  import FormCheckbox from '@/Components/FormCheckbox.vue';
+  import FormError from '@/Components/FormError.vue';
+  import FormInput from '@/Components/FormInput.vue';
+  import FormLabel from '@/Components/FormLabel.vue';
   import GuestLayout from '@/Layouts/GuestLayout.vue';
 
   defineProps({
@@ -41,9 +41,9 @@
 
     <form @submit.prevent="submit">
       <div>
-        <InputLabel for="email" value="Email" />
+        <FormLabel for="email" value="Email" />
 
-        <TextInput
+        <FormInput
           id="email"
           type="email"
           class="mt-1 block w-full"
@@ -53,13 +53,13 @@
           autocomplete="username"
         />
 
-        <InputError class="mt-2" :message="form.errors.email" />
+        <FormError class="mt-2" :message="form.errors.email" />
       </div>
 
       <div class="mt-4">
-        <InputLabel for="password" value="Password" />
+        <FormLabel for="password" value="Password" />
 
-        <TextInput
+        <FormInput
           id="password"
           type="password"
           class="mt-1 block w-full"
@@ -68,28 +68,24 @@
           autocomplete="current-password"
         />
 
-        <InputError class="mt-2" :message="form.errors.password" />
+        <FormError class="mt-2" :message="form.errors.password" />
       </div>
 
       <div class="mt-4 block">
         <label class="flex items-center">
-          <Checkbox name="remember" v-model:checked="form.remember" />
+          <FormCheckbox name="remember" v-model:checked="form.remember" />
           <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">Remember me</span>
         </label>
       </div>
 
       <div class="mt-4 flex items-center justify-end">
-        <AppLink v-if="canResetPassword" :href="route('password.request')">
+        <AppLink v-if="canResetPassword" :z-route="route('password.request')">
           Forgot your password?
         </AppLink>
 
-        <PrimaryButton
-          class="ms-4"
-          :class="{ 'opacity-25': form.processing }"
-          :disabled="form.processing"
-        >
+        <AppButton class="ms-4" :processing="form.processing" variant="primary" type="submit">
           Log in
-        </PrimaryButton>
+        </AppButton>
       </div>
     </form>
   </GuestLayout>
