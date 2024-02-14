@@ -65,7 +65,7 @@
           </div>
         </div>
         <div class="flex w-full flex-row flex-wrap items-center justify-center md:justify-end">
-          <SocialLinks size="lg" />
+          <SocialLinks size="md" />
         </div>
       </nav>
     </div>
