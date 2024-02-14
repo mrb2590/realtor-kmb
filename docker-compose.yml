@@ -1,5 +1,5 @@
 services:
-  realtorkmb.test:
+  realtorkmb-localhost:
     build:
       context: ./docker/8.2
       dockerfile: Dockerfile
@@ -9,8 +9,8 @@ services:
     extra_hosts:
       - 'host.docker.internal:host-gateway'
     ports:
-      - '${APP_PORT:-80}:80'
       - '${VITE_PORT:-5173}:${VITE_PORT:-5173}'
+      - '${VITE_INERTIA_SSR_PORT:-13715}:${VITE_INERTIA_SSR_PORT:-13715}'
     environment:
       WWWUSER: '${WWWUSER}'
       LARAVEL_SAIL: 1
@@ -21,12 +21,16 @@ services:
       - '.:/var/www/html'
     networks:
       - sail
+      - fleet
     depends_on:
       - mysql
       - redis
       - meilisearch
       - mailpit
       - selenium
+    labels:
+      - traefik.http.routers.realtorkmb-localhost.rule=Host(`realtorkmb.localhost`)
+      - traefik.http.services.realtorkmb-localhost.loadbalancer.server.port=80
   mysql:
     image: 'mysql/mysql-server:8.0'
     ports:
@@ -103,6 +107,8 @@ services:
 networks:
   sail:
     driver: bridge
+  fleet:
+    external: true
 volumes:
   sail-mysql:
     driver: local
