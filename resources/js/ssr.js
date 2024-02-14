@@ -9,6 +9,7 @@ import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m';
 import.meta.glob(['../img/**']);
 
 const appName = import.meta.env.VITE_APP_NAME || 'Realtor KMB';
+const inertiaSsrPort = import.meta.env.VITE_INERTIA_SSR_PORT || 13715;
 
 createServer(
   (page) =>
@@ -27,5 +28,5 @@ createServer(
           });
       }
     }),
-  13715
+  inertiaSsrPort
 );

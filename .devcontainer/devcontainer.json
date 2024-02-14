@@ -2,7 +2,7 @@
 {
   "name": "Realtor KMB",
   "dockerComposeFile": ["../docker-compose.yml"],
-  "service": "realtorkmb.test",
+  "service": "realtorkmb-localhost",
   "workspaceFolder": "/var/www/html",
   "customizations": {
     "vscode": {
