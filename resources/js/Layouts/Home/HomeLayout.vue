@@ -7,7 +7,7 @@
   <div class="relative flex h-full min-h-screen w-full flex-col">
     <Navbar />
 
-    <main>
+    <main class="mt-24 grow">
       <Transition
         enter-active-class="transition ease-in-out duration-500"
         enter-from-class="opacity-0"
@@ -18,9 +18,7 @@
         appear
         mode="out-in"
       >
-        <div class="mt-24">
-          <slot />
-        </div>
+        <slot />
       </Transition>
     </main>
 

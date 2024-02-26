@@ -57,7 +57,7 @@
                 :key="`${linkName}-${subLinkName}`"
               >
                 <component :is="link.icon.component" v-if="link.icon" :class="link.icon.classes" />
-                <Link :z-route="link.zroute" :link-to="link.href">
+                <Link :z-route="link.zRoute" :link-to="link.href">
                   {{ link.title }}
                 </Link>
               </li>

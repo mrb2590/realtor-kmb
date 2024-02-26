@@ -22,7 +22,7 @@
 </script>
 
 <template>
-  <ul class="flex w-full basis-0 items-center space-x-3">
+  <ul class="flex basis-0 items-center space-x-3">
     <li
       class="flex flex-row items-center"
       v-for="(link, linkName) in links.social.subLinks"

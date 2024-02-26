@@ -17,8 +17,8 @@
   const onPageScroll = () => {
     scroll.value = window.scrollY;
   };
-  const variant = computed(() => {
-    return scroll.value > 100 || !route().current('home') ? 'color' : 'white';
+  const navVariant = computed(() => {
+    return scroll.value > 100 || !route().current('home') ? 'minimal' : 'expanded';
   });
   const { cellPhone, officePhone, email } = links.contact.subLinks;
   const contactLinks = { cellPhone, officePhone, email };
@@ -42,7 +42,6 @@
     }
   };
   const navLinks = {
-    home: { ...links.home },
     about: { ...links.about },
     services: { ...links.services },
     listings: { ...links.listings },
@@ -65,18 +64,17 @@
 <template>
   <div
     :class="[
-      'fixed left-0 z-30 w-full border-b transition duration-700 ease-in-out',
-      { 'border-b-primary-900 shadow-md': variant === 'color' },
-      { 'border-b-transparent': variant === 'white' },
-      variant === 'white' ? 'bg-transparent' : 'bg-white'
+      'fixed left-0 top-0 z-30 w-full border-b transition duration-300 ease-in',
+      { 'border-b-primary-900 bg-white shadow-md': navVariant === 'minimal' },
+      { 'border-b-transparent bg-transparent': navVariant === 'expanded' }
     ]"
   >
     <!-- Top Nav -->
-    <nav class="z-20 h-12 w-full border-primary-700 bg-transparent text-sm">
+    <nav class="z-30 h-12 w-full border-primary-700 bg-transparent text-sm">
       <div
-        class="mx-auto flex h-full w-full flex-row items-center justify-between space-x-6 px-4 py-2 sm:container"
+        class="mx-auto flex h-full w-full flex-row items-center justify-between space-x-6 px-6 sm:container"
       >
-        <SocialLinks size="xs" :icon-variant="variant" />
+        <SocialLinks size="xs" :icon-variant="navVariant === 'expanded' ? 'white' : 'color'" />
 
         <ul class="flex w-full items-center justify-end space-x-3">
           <li
@@ -89,7 +87,7 @@
               :link-to="link.href"
               :title="link.title"
               class="flex flex-row items-center"
-              :variant="variant"
+              :variant="navVariant === 'expanded' ? 'white' : 'color'"
             >
               <component
                 v-if="linkName === 'cellPhone2' ? link.iconAlt : link.icon"
@@ -103,45 +101,35 @@
       </div>
     </nav>
 
-    <div class="relative z-20 w-full">
+    <div :class="['relative z-30 w-full', navVariant === 'expanded' ? 'h-auto' : 'h-16']">
       <!-- Desktop Nav -->
-      <nav class="mx-auto w-full px-4 pb-2 pt-1 sm:container sm:h-auto sm:pb-4">
-        <ul
-          class="mx-auto flex h-full w-full items-center justify-between text-xl font-light uppercase sm:space-x-6"
-        >
+      <nav
+        :class="[
+          'mx-auto flex w-full items-center justify-center space-x-6 px-6 sm:container',
+          navVariant === 'expanded' ? 'flex-row sm:flex-col' : 'flex-row'
+        ]"
+      >
+        <div :class="['w-full', navVariant === 'expanded' ? 'mb-6 max-w-48' : 'max-w-36']">
+          <NavLink :z-route="{ name: 'home' }">
+            <AppLogo
+              :theme="navVariant === 'expanded' ? 'white' : 'color'"
+              :variant="navVariant === 'expanded' ? 'main' : 'horizontal'"
+              class="w-full"
+            />
+            <div class="sr-only">home</div>
+          </NavLink>
+        </div>
+        <ul class="flex grow items-center justify-end text-xl font-light uppercase sm:space-x-6">
           <li
-            class="items-center justify-start transition-all"
-            :class="[
-              {
-                'hidden basis-1/6 sm:flex': linkName !== 'home'
-              },
-              { 'flex basis-1/3': linkName === 'home' && variant === 'color' },
-              {
-                'flex grow justify-center sm:basis-1/3 sm:justify-start':
-                  linkName === 'home' && variant === 'white'
-              }
-            ]"
+            class="hidden items-center justify-start sm:flex"
             v-for="(navLink, linkName) in navLinks"
             :key="linkName"
           >
-            <NavLink v-if="linkName === 'home'" :z-route="navLink.zRoute" :link-to="navLink.href">
-              <AppLogo
-                :theme="variant"
-                variant="horizontal"
-                :class="[
-                  'h-auto ',
-                  { 'w-52': variant === 'white' },
-                  { 'w-32': variant === 'color' }
-                ]"
-              />
-            </NavLink>
-
             <NavLink
-              v-else
               :z-route="navLink.zRoute"
               :link-to="navLink.href"
               class="text-center text-base md:text-xl"
-              :variant="variant"
+              :variant="navVariant === 'expanded' ? 'white' : 'color'"
             >
               {{ navLink.title }}
             </NavLink>
@@ -150,9 +138,9 @@
           <!-- Mobile Nav toggle -->
           <li class="items-center justify-start sm:hidden">
             <Button
-              :variant="variant === 'white' ? 'transparent' : 'secondary'"
+              :variant="navVariant === 'expanded' ? 'transparent' : 'secondary'"
               type="button"
-              :size="variant === 'white' ? 'xl' : 'sm'"
+              :size="navVariant === 'expanded' ? 'xl' : 'sm'"
               square
               @click="toggleMobileNav"
             >
@@ -187,7 +175,12 @@
         mode="out-in"
       >
         <nav
-          class="absolute inset-0 left-0 top-[4.5rem] z-30 h-[calc(100vh_-_7.5rem)] w-screen border-t border-primary-700 bg-white"
+          :class="[
+            'absolute inset-0 left-0 z-30 w-screen border-t border-primary-700 bg-white',
+            navVariant === 'expanded'
+              ? 'top-32 h-[calc(100vh_-_11rem)]'
+              : 'top-16 h-[calc(100vh_-_7rem)]'
+          ]"
           v-if="mobileNavOpen"
         >
           <div class="h-full w-full overflow-auto px-4 py-4">
