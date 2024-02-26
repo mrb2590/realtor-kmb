@@ -1,5 +1,7 @@
 <script setup>
-  import { Head, Link } from '@inertiajs/vue3';
+  import { Link } from '@inertiajs/vue3';
+
+  import HeadMeta from '@/Components/HeadMeta.vue';
 
   defineProps({
     canLogin: {
@@ -20,7 +22,7 @@
 </script>
 
 <template>
-  <Head title="Welcome" />
+  <HeadMeta title="Welcome" />
 
   <div
     class="bg-dots-darker dark:bg-dots-lighter relative min-h-screen bg-gray-100 bg-center selection:bg-red-500 selection:text-white dark:bg-gray-900 sm:flex sm:items-center sm:justify-center"

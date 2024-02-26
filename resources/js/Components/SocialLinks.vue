@@ -1,5 +1,5 @@
 <script setup>
-  import AppButton from '@/Components/AppButton.vue';
+  import Link from '@/Components/Link.vue';
   import { links } from '~data/app-links';
 
   const props = defineProps({
@@ -10,6 +10,13 @@
     size: {
       type: String,
       default: 'sm'
+    },
+    iconVariant: {
+      type: String,
+      default: 'color',
+      validator: (value) => {
+        return ['white', 'color'].includes(value);
+      }
     }
   });
 </script>
@@ -21,16 +28,13 @@
       v-for="(link, linkName) in links.social.subLinks"
       :key="linkName"
     >
-      <AppButton
-        :z-route="link.route"
-        :link-to="link.href"
-        :title="link.title"
-        :variant="props.variant"
-        :size="props.size"
-        square
-      >
-        <component :is="link.icon.component" v-if="link.icon" :class="link.icon.classes" />
-      </AppButton>
+      <Link :z-route="link.route" :link-to="link.href" :title="link.title" :variant="props.variant">
+        <component
+          :is="props.iconVariant === 'white' ? link.icon.whiteComponent : link.icon.component"
+          v-if="link.icon"
+          :class="{ ...link.icon.classes, 'text-white': props.iconVariant === 'white' }"
+        />
+      </Link>
     </li>
   </ul>
 </template>

@@ -1,11 +1,12 @@
 <script setup>
-  import { Head, useForm } from '@inertiajs/vue3';
+  import { useForm } from '@inertiajs/vue3';
 
-  import AppButton from '@/Components/AppButton.vue';
-  import FormError from '@/Components/FormError.vue';
-  import FormInput from '@/Components/FormInput.vue';
-  import FormLabel from '@/Components/FormLabel.vue';
-  import GuestLayout from '@/Layouts/GuestLayout.vue';
+  import Button from '@/Components/Button.vue';
+  import Error from '@/Components/Form/Error.vue';
+  import Input from '@/Components/Form/Input.vue';
+  import Label from '@/Components/Form/Label.vue';
+  import HeadMeta from '@/Components/HeadMeta.vue';
+  import AuthLayout from '@/Layouts/AuthLayout.vue';
 
   defineProps({
     status: {
@@ -23,8 +24,8 @@
 </script>
 
 <template>
-  <GuestLayout>
-    <Head title="Forgot Password" />
+  <AuthLayout>
+    <HeadMeta title="Forgot Password" />
 
     <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
       Forgot your password? No problem. Just let us know your email address and we will email you a
@@ -37,9 +38,8 @@
 
     <form @submit.prevent="submit">
       <div>
-        <FormLabel for="email" value="Email" />
-
-        <FormInput
+        <Label for="email" value="Email" />
+        <Input
           id="email"
           type="email"
           class="mt-1 block w-full"
@@ -48,19 +48,18 @@
           autofocus
           autocomplete="username"
         />
-
-        <FormError class="mt-2" :message="form.errors.email" />
+        <Error class="mt-2" :message="form.errors.email" />
       </div>
 
       <div class="mt-4 flex items-center justify-end">
-        <AppButton
+        <Button
           :class="{ 'opacity-25': form.processing }"
           :disabled="form.processing"
           variant="primary"
         >
           Email Password Reset Link
-        </AppButton>
+        </Button>
       </div>
     </form>
-  </GuestLayout>
+  </AuthLayout>
 </template>

@@ -1,12 +1,13 @@
 <script setup>
-  import { Head, useForm } from '@inertiajs/vue3';
+  import { useForm } from '@inertiajs/vue3';
 
-  import AppButton from '@/Components/AppButton.vue';
-  import AppLink from '@/Components/AppLink.vue';
-  import FormError from '@/Components/FormError.vue';
-  import FormInput from '@/Components/FormInput.vue';
-  import FormLabel from '@/Components/FormLabel.vue';
-  import GuestLayout from '@/Layouts/GuestLayout.vue';
+  import Button from '@/Components/Button.vue';
+  import Error from '@/Components/Form/Error.vue';
+  import Input from '@/Components/Form/Input.vue';
+  import Label from '@/Components/Form/Label.vue';
+  import HeadMeta from '@/Components/HeadMeta.vue';
+  import Link from '@/Components/Link.vue';
+  import AuthLayout from '@/Layouts/AuthLayout.vue';
 
   const form = useForm({
     name: '',
@@ -23,14 +24,13 @@
 </script>
 
 <template>
-  <GuestLayout>
-    <Head title="Register" />
+  <AuthLayout>
+    <HeadMeta title="Register" />
 
     <form @submit.prevent="submit">
       <div>
-        <FormLabel for="name" value="Name" />
-
-        <FormInput
+        <Label for="name" value="Name" />
+        <Input
           id="name"
           type="text"
           class="mt-1 block w-full"
@@ -39,14 +39,12 @@
           autofocus
           autocomplete="name"
         />
-
-        <FormError class="mt-2" :message="form.errors.name" />
+        <Error class="mt-2" :message="form.errors.name" />
       </div>
 
       <div class="mt-4">
-        <FormLabel for="email" value="Email" />
-
-        <FormInput
+        <Label for="email" value="Email" />
+        <Input
           id="email"
           type="email"
           class="mt-1 block w-full"
@@ -54,14 +52,12 @@
           required
           autocomplete="username"
         />
-
-        <FormError class="mt-2" :message="form.errors.email" />
+        <Error class="mt-2" :message="form.errors.email" />
       </div>
 
       <div class="mt-4">
-        <FormLabel for="password" value="Password" />
-
-        <FormInput
+        <Label for="password" value="Password" />
+        <Input
           id="password"
           type="password"
           class="mt-1 block w-full"
@@ -69,14 +65,12 @@
           required
           autocomplete="new-password"
         />
-
-        <FormError class="mt-2" :message="form.errors.password" />
+        <Error class="mt-2" :message="form.errors.password" />
       </div>
 
       <div class="mt-4">
-        <FormLabel for="password_confirmation" value="Confirm Password" />
-
-        <FormInput
+        <Label for="password_confirmation" value="Confirm Password" />
+        <Input
           id="password_confirmation"
           type="password"
           class="mt-1 block w-full"
@@ -84,17 +78,16 @@
           required
           autocomplete="new-password"
         />
-
-        <FormError class="mt-2" :message="form.errors.password_confirmation" />
+        <Error class="mt-2" :message="form.errors.password_confirmation" />
       </div>
 
       <div class="mt-4 flex items-center justify-end">
-        <AppLink :z-route="route('login')"> Already registered? </AppLink>
+        <Link :z-route="{ name: 'login' }"> Already registered? </Link>
 
-        <AppButton class="ms-4" :processing="form.processing" variant="primary" type="submit">
+        <Button class="ms-4" :processing="form.processing" variant="primary" type="submit">
           Register
-        </AppButton>
+        </Button>
       </div>
     </form>
-  </GuestLayout>
+  </AuthLayout>
 </template>

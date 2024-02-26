@@ -21,6 +21,12 @@ import LinkedInIcon from '~icons/logos/linkedin-icon';
 import TikTokIcon from '~icons/logos/tiktok-icon';
 import YouTubeIcon from '~icons/logos/youtube-icon';
 import XIcon from '~icons/ri/twitter-x-line';
+import XIconWhite from '~icons/ri/twitter-x-line';
+import FacebookIconWhite from '~icons/simple-icons/facebook';
+import InstagramIconWhite from '~icons/simple-icons/instagram';
+import LinkedInIconWhite from '~icons/simple-icons/linkedin';
+import TikTokIconWhite from '~icons/simple-icons/tiktok';
+import YouTubeIconWhite from '~icons/simple-icons/youtube';
 
 export { links };
 
@@ -261,6 +267,7 @@ const links = {
         href: '#',
         icon: {
           component: markRaw(LinkedInIcon),
+          whiteComponent: markRaw(LinkedInIconWhite),
           classes: []
         }
       },
@@ -270,6 +277,7 @@ const links = {
         href: '#',
         icon: {
           component: markRaw(FacebookIcon),
+          whiteComponent: markRaw(FacebookIconWhite),
           classes: []
         }
       },
@@ -279,6 +287,7 @@ const links = {
         href: '#',
         icon: {
           component: markRaw(InstagramIcon),
+          whiteComponent: markRaw(InstagramIconWhite),
           classes: []
         }
       },
@@ -288,6 +297,7 @@ const links = {
         href: '#',
         icon: {
           component: markRaw(TikTokIcon),
+          whiteComponent: markRaw(TikTokIconWhite),
           classes: []
         }
       },
@@ -297,6 +307,7 @@ const links = {
         href: '#',
         icon: {
           component: markRaw(YouTubeIcon),
+          whiteComponent: markRaw(YouTubeIconWhite),
           classes: []
         }
       },
@@ -306,6 +317,7 @@ const links = {
         href: '#',
         icon: {
           component: markRaw(XIcon),
+          whiteComponent: markRaw(XIconWhite),
           classes: []
         }
       }

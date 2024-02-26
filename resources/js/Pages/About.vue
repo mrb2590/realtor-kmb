@@ -1,12 +1,12 @@
 <script setup>
-  import AppHead from '@/Components/AppHead.vue';
-  import HomeLayout from '@/Layouts/HomeLayout.vue';
+  import HeadMeta from '@/Components/HeadMeta.vue';
+  import HomeLayout from '@/Layouts/Home/HomeLayout.vue';
 
   defineOptions({ layout: HomeLayout });
 </script>
 
 <template>
   <div>
-    <AppHead title="About" description="To do..." />
+    <HeadMeta title="About" description="To do..." />
   </div>
 </template>

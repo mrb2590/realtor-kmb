@@ -1,11 +1,11 @@
 <script setup>
   import { useForm, usePage } from '@inertiajs/vue3';
 
-  import AppButton from '@/Components/AppButton.vue';
-  import AppLink from '@/Components/AppLink.vue';
-  import FormError from '@/Components/FormError.vue';
-  import FormInput from '@/Components/FormInput.vue';
-  import FormLabel from '@/Components/FormLabel.vue';
+  import Button from '@/Components/Button.vue';
+  import Error from '@/Components/Form/Error.vue';
+  import Input from '@/Components/Form/Input.vue';
+  import Label from '@/Components/Form/Label.vue';
+  import Link from '@/Components/Link.vue';
 
   defineProps({
     mustVerifyEmail: {
@@ -36,9 +36,9 @@
 
     <form @submit.prevent="form.patch(route('profile.update'))" class="mt-6 space-y-6">
       <div>
-        <FormLabel for="name" value="Name" />
+        <Label for="name" value="Name" />
 
-        <FormInput
+        <Input
           id="name"
           type="text"
           class="mt-1 block w-full"
@@ -48,13 +48,13 @@
           autocomplete="name"
         />
 
-        <FormError class="mt-2" :message="form.errors.name" />
+        <Error class="mt-2" :message="form.errors.name" />
       </div>
 
       <div>
-        <FormLabel for="email" value="Email" />
+        <Label for="email" value="Email" />
 
-        <FormInput
+        <Input
           id="email"
           type="email"
           class="mt-1 block w-full"
@@ -63,20 +63,15 @@
           autocomplete="username"
         />
 
-        <FormError class="mt-2" :message="form.errors.email" />
+        <Error class="mt-2" :message="form.errors.email" />
       </div>
 
       <div v-if="mustVerifyEmail && user.email_verified_at === null">
         <p class="mt-2 text-sm text-gray-800 dark:text-gray-200">
           Your email address is unverified.
-          <AppLink
-            :z-route="route('verification.send')"
-            method="post"
-            as="button"
-            class="underline"
-          >
+          <Link :z-route="route('verification.send')" method="post" as="button" class="underline">
             Click here to re-send the verification email.
-          </AppLink>
+          </Link>
         </p>
 
         <div
@@ -88,7 +83,7 @@
       </div>
 
       <div class="flex items-center gap-4">
-        <AppButton :processing="form.processing" type="submit">Save</AppButton>
+        <Button :processing="form.processing" type="submit">Save</Button>
 
         <Transition
           enter-active-class="transition ease-in-out"

@@ -2,10 +2,10 @@
   import { useForm } from '@inertiajs/vue3';
   import { nextTick, ref } from 'vue';
 
-  import AppButton from '@/Components/AppButton.vue';
-  import FormError from '@/Components/FormError.vue';
-  import FormInput from '@/Components/FormInput.vue';
-  import FormLabel from '@/Components/FormLabel.vue';
+  import Button from '@/Components/Button.vue';
+  import Error from '@/Components/Form/Error.vue';
+  import Input from '@/Components/Form/Input.vue';
+  import Label from '@/Components/Form/Label.vue';
   import Modal from '@/Components/Modal.vue';
 
   const confirmingUserDeletion = ref(false);
@@ -49,7 +49,7 @@
       </p>
     </header>
 
-    <AppButton @click="confirmUserDeletion">Delete Account</AppButton>
+    <Button @click="confirmUserDeletion">Delete Account</Button>
 
     <Modal :show="confirmingUserDeletion" @close="closeModal">
       <div class="p-6">
@@ -63,9 +63,9 @@
         </p>
 
         <div class="mt-6">
-          <FormLabel for="password" value="Password" class="sr-only" />
+          <Label for="password" value="Password" class="sr-only" />
 
-          <FormInput
+          <Input
             id="password"
             ref="passwordInput"
             v-model="form.password"
@@ -75,13 +75,13 @@
             @keyup.enter="deleteUser"
           />
 
-          <FormError :message="form.errors.password" class="mt-2" />
+          <Error :message="form.errors.password" class="mt-2" />
         </div>
 
         <div class="mt-6 flex justify-end">
-          <AppButton @click="closeModal" variant="secondary" type="button"> Cancel </AppButton>
+          <Button @click="closeModal" variant="secondary" type="button"> Cancel </Button>
 
-          <AppButton
+          <Button
             class="ms-3"
             :processing="form.processing"
             variant="danger"
@@ -89,7 +89,7 @@
             @click="deleteUser"
           >
             Delete Account
-          </AppButton>
+          </Button>
         </div>
       </div>
     </Modal>

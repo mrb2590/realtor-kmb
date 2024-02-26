@@ -1,11 +1,9 @@
 <script setup>
-  import { Head } from '@inertiajs/vue3';
-
-  import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-
-  import DeleteUserForm from './Partials/DeleteUserForm.vue';
-  import UpdatePasswordForm from './Partials/UpdatePasswordForm.vue';
-  import UpdateProfileInformationForm from './Partials/UpdateProfileInformationForm.vue';
+  import HeadMeta from '@/Components/HeadMeta.vue';
+  import AdminLayout from '@/Layouts/Admin/AdminLayout.vue';
+  import DeleteUserForm from '@/Pages/Profile/Partials/DeleteUserForm.vue';
+  import UpdatePasswordForm from '@/Pages/Profile/Partials/UpdatePasswordForm.vue';
+  import UpdateProfileInformationForm from '@/Pages/Profile/Partials/UpdateProfileInformationForm.vue';
 
   defineProps({
     mustVerifyEmail: {
@@ -18,9 +16,9 @@
 </script>
 
 <template>
-  <Head title="Profile" />
+  <HeadMeta title="Profile" />
 
-  <AuthenticatedLayout>
+  <AdminLayout>
     <template #header>
       <h2 class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">Profile</h2>
     </template>
@@ -44,5 +42,5 @@
         </div>
       </div>
     </div>
-  </AuthenticatedLayout>
+  </AdminLayout>
 </template>

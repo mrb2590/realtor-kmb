@@ -1,13 +1,12 @@
 <script setup>
-  import { Head } from '@inertiajs/vue3';
-
-  import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
+  import HeadMeta from '@/Components/HeadMeta.vue';
+  import AdminLayout from '@/Layouts/Admin/AdminLayout.vue';
 </script>
 
 <template>
-  <Head title="Dashboard" />
+  <HeadMeta title="Dashboard" />
 
-  <AuthenticatedLayout>
+  <AdminLayout>
     <template #header>
       <h2 class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
         Dashboard
@@ -21,5 +20,5 @@
         </div>
       </div>
     </div>
-  </AuthenticatedLayout>
+  </AdminLayout>
 </template>

@@ -1,13 +1,14 @@
 <script setup>
-  import { Head, useForm } from '@inertiajs/vue3';
+  import { useForm } from '@inertiajs/vue3';
 
-  import AppButton from '@/Components/AppButton.vue';
-  import AppLink from '@/Components/AppLink.vue';
-  import FormCheckbox from '@/Components/FormCheckbox.vue';
-  import FormError from '@/Components/FormError.vue';
-  import FormInput from '@/Components/FormInput.vue';
-  import FormLabel from '@/Components/FormLabel.vue';
-  import GuestLayout from '@/Layouts/GuestLayout.vue';
+  import Button from '@/Components/Button.vue';
+  import Checkbox from '@/Components/Form/Checkbox.vue';
+  import Error from '@/Components/Form/Error.vue';
+  import Input from '@/Components/Form/Input.vue';
+  import Label from '@/Components/Form/Label.vue';
+  import HeadMeta from '@/Components/HeadMeta.vue';
+  import Link from '@/Components/Link.vue';
+  import AuthLayout from '@/Layouts/AuthLayout.vue';
 
   defineProps({
     canResetPassword: {
@@ -32,8 +33,8 @@
 </script>
 
 <template>
-  <GuestLayout>
-    <Head title="Log in" />
+  <AuthLayout>
+    <HeadMeta title="Log in" />
 
     <div v-if="status" class="mb-4 text-sm font-medium text-green-600">
       {{ status }}
@@ -41,9 +42,8 @@
 
     <form @submit.prevent="submit">
       <div>
-        <FormLabel for="email" value="Email" />
-
-        <FormInput
+        <Label for="email" value="Email" />
+        <Input
           id="email"
           type="email"
           class="mt-1 block w-full"
@@ -52,14 +52,12 @@
           autofocus
           autocomplete="username"
         />
-
-        <FormError class="mt-2" :message="form.errors.email" />
+        <Error class="mt-2" :message="form.errors.email" />
       </div>
 
       <div class="mt-4">
-        <FormLabel for="password" value="Password" />
-
-        <FormInput
+        <Label for="password" value="Password" />
+        <Input
           id="password"
           type="password"
           class="mt-1 block w-full"
@@ -67,26 +65,25 @@
           required
           autocomplete="current-password"
         />
-
-        <FormError class="mt-2" :message="form.errors.password" />
+        <Error class="mt-2" :message="form.errors.password" />
       </div>
 
       <div class="mt-4 block">
         <label class="flex items-center">
-          <FormCheckbox name="remember" v-model:checked="form.remember" />
+          <Checkbox name="remember" v-model:checked="form.remember" />
           <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">Remember me</span>
         </label>
       </div>
 
       <div class="mt-4 flex items-center justify-end">
-        <AppLink v-if="canResetPassword" :z-route="route('password.request')">
+        <Link v-if="canResetPassword" :z-route="{ name: 'password.request' }">
           Forgot your password?
-        </AppLink>
+        </Link>
 
-        <AppButton class="ms-4" :processing="form.processing" variant="primary" type="submit">
+        <Button class="ms-4" :processing="form.processing" variant="primary" type="submit">
           Log in
-        </AppButton>
+        </Button>
       </div>
     </form>
-  </GuestLayout>
+  </AuthLayout>
 </template>

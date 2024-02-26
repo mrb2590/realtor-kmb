@@ -1,8 +1,8 @@
 <script setup>
   import { computed } from 'vue';
 
-  import AppHead from '@/Components/AppHead.vue';
-  import AppLogo from '@/Components/AppLogo.vue';
+  import AppLogo from '@/Components/AppLogo/AppLogo.vue';
+  import HeadMeta from '@/Components/HeadMeta.vue';
 
   const props = defineProps({
     status: {
@@ -42,17 +42,17 @@
 
 <template>
   <Transition
-    enter-active-class="transition ease-out duration-1000"
+    enter-active-class="transition ease-in-out duration-1000"
     enter-from-class="transform scale-95 opacity-0"
     enter-to-class="transform scale-100 opacity-100"
-    leave-active-class="transition ease-in duration-1000"
+    leave-active-class="transition ease-in-out duration-1000"
     leave-from-class="transform scale-100 opacity-100"
     leave-to-class="transform scale-95 opacity-0"
     appear
     mode="out-in"
   >
     <div class="flex h-screen w-full flex-col items-center justify-center p-6">
-      <AppHead :title="`${props.status} ${title}`" :description="description" />
+      <HeadMeta :title="`${props.status} ${title}`" :description="description" />
       <AppLogo class="mb-4 w-full max-w-60" />
       <h1 class="mb-4 text-center text-2xl">
         <strong>{{ props.status }}</strong> <br />

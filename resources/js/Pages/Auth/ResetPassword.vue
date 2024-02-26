@@ -1,11 +1,12 @@
 <script setup>
-  import { Head, useForm } from '@inertiajs/vue3';
+  import { useForm } from '@inertiajs/vue3';
 
-  import AppButton from '@/Components/AppButton.vue';
-  import FormError from '@/Components/FormError.vue';
-  import FormInput from '@/Components/FormInput.vue';
-  import FormLabel from '@/Components/FormLabel.vue';
-  import GuestLayout from '@/Layouts/GuestLayout.vue';
+  import Button from '@/Components/Button.vue';
+  import Error from '@/Components/Form/Error.vue';
+  import Input from '@/Components/Form/Input.vue';
+  import Label from '@/Components/Form/Label.vue';
+  import HeadMeta from '@/Components/HeadMeta.vue';
+  import AuthLayout from '@/Layouts/AuthLayout.vue';
 
   const props = defineProps({
     email: {
@@ -33,14 +34,13 @@
 </script>
 
 <template>
-  <GuestLayout>
-    <Head title="Reset Password" />
+  <AuthLayout>
+    <HeadMeta title="Reset Password" />
 
     <form @submit.prevent="submit">
       <div>
-        <FormLabel for="email" value="Email" />
-
-        <FormInput
+        <Label for="email" value="Email" />
+        <Input
           id="email"
           type="email"
           class="mt-1 block w-full"
@@ -49,14 +49,12 @@
           autofocus
           autocomplete="username"
         />
-
-        <FormError class="mt-2" :message="form.errors.email" />
+        <Error class="mt-2" :message="form.errors.email" />
       </div>
 
       <div class="mt-4">
-        <FormLabel for="password" value="Password" />
-
-        <FormInput
+        <Label for="password" value="Password" />
+        <Input
           id="password"
           type="password"
           class="mt-1 block w-full"
@@ -64,14 +62,12 @@
           required
           autocomplete="new-password"
         />
-
-        <FormError class="mt-2" :message="form.errors.password" />
+        <Error class="mt-2" :message="form.errors.password" />
       </div>
 
       <div class="mt-4">
-        <FormLabel for="password_confirmation" value="Confirm Password" />
-
-        <FormInput
+        <Label for="password_confirmation" value="Confirm Password" />
+        <Input
           id="password_confirmation"
           type="password"
           class="mt-1 block w-full"
@@ -79,15 +75,14 @@
           required
           autocomplete="new-password"
         />
-
-        <FormError class="mt-2" :message="form.errors.password_confirmation" />
+        <Error class="mt-2" :message="form.errors.password_confirmation" />
       </div>
 
       <div class="mt-4 flex items-center justify-end">
-        <AppButton :processing="form.processing" variant="primary" type="submit">
+        <Button :processing="form.processing" variant="primary" type="submit">
           Reset Password
-        </AppButton>
+        </Button>
       </div>
     </form>
-  </GuestLayout>
+  </AuthLayout>
 </template>

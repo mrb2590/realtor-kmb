@@ -1,10 +1,11 @@
 <script setup>
-  import { Head, useForm } from '@inertiajs/vue3';
+  import { useForm } from '@inertiajs/vue3';
   import { computed } from 'vue';
 
-  import AppButton from '@/Components/AppButton.vue';
-  import AppLink from '@/Components/AppLink.vue';
-  import GuestLayout from '@/Layouts/GuestLayout.vue';
+  import Button from '@/Components/Button.vue';
+  import HeadMeta from '@/Components/HeadMeta.vue';
+  import Link from '@/Components/Link.vue';
+  import AuthLayout from '@/Layouts/AuthLayout.vue';
 
   const props = defineProps({
     status: {
@@ -22,8 +23,8 @@
 </script>
 
 <template>
-  <GuestLayout>
-    <Head title="Email Verification" />
+  <AuthLayout>
+    <HeadMeta title="Email Verification" />
 
     <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
       Thanks for signing up! Before getting started, could you verify your email address by clicking
@@ -40,14 +41,14 @@
 
     <form @submit.prevent="submit">
       <div class="mt-4 flex items-center justify-between">
-        <AppButton :processing="form.processing" variant="primary" type="submit">
+        <Button :processing="form.processing" variant="primary" type="submit">
           Resend Verification Email
-        </AppButton>
+        </Button>
 
-        <AppLink :z-route="route('logout')" method="post" as="button" class="underline">
+        <Link :z-route="{ name: 'logout' }" method="post" as="button" class="underline">
           Log Out
-        </AppLink>
+        </Link>
       </div>
     </form>
-  </GuestLayout>
+  </AuthLayout>
 </template>
