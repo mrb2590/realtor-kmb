@@ -2,6 +2,8 @@
   import { computed } from 'vue';
 
   import LogoHorizontal from '@/Components/AppLogo/Partials/LogoHorizontal.vue';
+  import LogoHorizontalAlt from '@/Components/AppLogo/Partials/LogoHorizontalAlt.vue';
+  import LogoHorizontalAlt2 from '@/Components/AppLogo/Partials/LogoHorizontalAlt2.vue';
   import LogoIcon from '@/Components/AppLogo/Partials/LogoIcon.vue';
   import LogoMain from '@/Components/AppLogo/Partials/LogoMain.vue';
 
@@ -10,7 +12,7 @@
       type: String,
       default: 'main',
       validator: (value) => {
-        return ['main', 'horizontal', 'icon'].includes(value);
+        return ['main', 'horizontal', 'horizontal-alt', 'horizontal-alt-2', 'icon'].includes(value);
       }
     },
     theme: {
@@ -46,5 +48,10 @@
 <template>
   <LogoMain v-if="props.variant === 'main'" :theme-classes="themeClasses" />
   <LogoHorizontal v-else-if="props.variant === 'horizontal'" :theme-classes="themeClasses" />
+  <LogoHorizontalAlt v-else-if="props.variant === 'horizontal-alt'" :theme-classes="themeClasses" />
+  <LogoHorizontalAlt2
+    v-else-if="props.variant === 'horizontal-alt-2'"
+    :theme-classes="themeClasses"
+  />
   <LogoIcon v-else-if="props.variant === 'icon'" :theme-classes="themeClasses" />
 </template>

@@ -2,6 +2,7 @@
   import AppLogo from '@/Components/AppLogo/AppLogo.vue';
   import BackgroundSlider from '@/Components/BackgroundSlider.vue';
   import Button from '@/Components/Button.vue';
+  import FeaturedListings from '@/Components/FeaturedListings.vue';
   import HeadMeta from '@/Components/HeadMeta.vue';
   import HomeLayout from '@/Layouts/Home/HomeLayout.vue';
   import ChevronDownIcon from '~icons/heroicons-outline/chevron-down';
@@ -12,7 +13,7 @@
 
   const scrollPast = () => {
     window.scrollTo({
-      top: window.innerHeight - 125,
+      top: window.innerHeight,
       behavior: 'smooth'
     });
   };
@@ -23,7 +24,7 @@
     <HeadMeta />
 
     <div
-      class="relative -mt-24 flex h-full min-h-screen w-full items-center justify-center bg-white bg-cover bg-fixed bg-center bg-no-repeat"
+      class="relative flex h-full min-h-screen w-full items-center justify-center bg-white bg-cover bg-fixed bg-center bg-no-repeat"
     >
       <BackgroundSlider
         class="absolute left-0 top-0 z-0 h-full min-h-screen w-full"
@@ -31,7 +32,7 @@
       />
 
       <h1 class="relative max-w-4xl rounded bg-black/50 p-8 text-center font-normal text-white">
-        <div class="mb-6 text-4xl font-bold uppercase">Discover Unmatched Expertise:</div>
+        <div class="mb-6 text-4xl font-bold uppercase">Discover Unmatched Expertise</div>
         <div class="text-2xl text-gray-100">
           Karen Buonomo Leads the Way in Expired Listings, Home Staging, and Seamless Home Matches!
         </div>
@@ -51,7 +52,7 @@
     </div>
 
     <!-- Intro -->
-    <div class="container relative z-10 mx-auto my-12 w-full rounded-lg bg-white p-6">
+    <div class="mx-auto my-12 w-full rounded-lg bg-white p-6 sm:container">
       <div class="flex flex-col items-center justify-center">
         <div class="flex flex-row items-stretch justify-center space-x-6">
           <div
@@ -76,9 +77,11 @@
     </div>
 
     <div
-      class="mt-14 flex flex-col space-y-20 overflow-x-hidden bg-primary-800 px-6 py-12 text-white"
+      class="mt-14 flex flex-col space-y-20 overflow-x-hidden bg-primary-950 px-6 py-12 text-white"
     >
-      <h2 class="text-center text-4xl font-extrabold uppercase">More Awards Than Others</h2>
+      <h2 class="text-center text-4xl font-extrabold uppercase">
+        Awards That Speak for Themselves
+      </h2>
 
       <div class="flex flex-row space-x-6">
         <div class="animate-scroll-left flex w-max flex-row justify-center space-x-6">
@@ -139,6 +142,11 @@
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod, nunc quis sagittis
         dictum, quam velit ultricies libero, vitae semper nisl velit eget felis.
       </p>
+    </div>
+
+    <div class="mx-auto w-full p-6 sm:container">
+      <h2 class="mb-12 mt-6 text-center text-4xl font-bold">Featured Listings</h2>
+      <FeaturedListings />
     </div>
 
     <div

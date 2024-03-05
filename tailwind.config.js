@@ -63,8 +63,8 @@ export default {
         'text-default': customColors['black-pearl'][900]
       },
       fontFamily: {
-        body: ['Nunito', 'system-ui', 'sans-serif'],
-        display: ['Nunito', 'Georgia', 'serif']
+        body: ['Roboto', 'system-ui', 'sans-serif'],
+        display: ['Roboto', 'Georgia', 'serif']
       },
       screens: {
         xs: '425px'
